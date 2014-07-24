@@ -43,5 +43,10 @@ module Api
         :amount_raised, :goal_date
       )
     end
+
+    def restrict_create
+      redirect_to root_url unless signed_in?
+    end
+
   end
 end

@@ -1,7 +1,7 @@
 <div class="container container-fluid">
   <div class="row">
     <div class="col-xs-5 col-xs-offset-2">
-      <h1>Edit Profile Settings</h1>
+      <h1>Edit Profile</h1>
       <form action="<%= user_url(current_user)%>" method="post" role="form">
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

@@ -36,4 +36,8 @@ class UsersController < ApplicationController
   def user_profile_params
     params.require(:user).permit(:name, :biography, :location, :website)
   end
+
+  def restrict_profile_settings
+    redirect_to root_url unless current_user.id == params[:id]
+  end
 end
