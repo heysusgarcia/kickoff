@@ -4,7 +4,6 @@ window.ShoeApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
   }
 };
 

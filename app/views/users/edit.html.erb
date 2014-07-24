@@ -1,0 +1,43 @@
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-xs-5 col-xs-offset-2">
+      <h1>Edit Profile Settings</h1>
+      <form action="<%= user_url(current_user)%>" method="post" role="form">
+        <input type="hidden" name="_method" value="PATCH">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="user[name]" id="name"
+                 value="<%= current_user.name %>"class="form-control"><br>
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Biography</label>
+          <textarea name="user[biography]" id="bio"
+                    palceholder="We suggest a short bio" class="form-control"></textarea><br>
+
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" name="user[location]" id="location"
+                    palceholder="City, ST" class="form-control"><br>
+
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="text" name="user[website]" id="website"
+                 palceholder="www.example.com" class="form-control"><br>
+
+        </div>
+
+        <input type="submit" value="Save Settings" class="btn btn-primary">
+
+
+      </form>
+    </div>
+  </div>
+</div>

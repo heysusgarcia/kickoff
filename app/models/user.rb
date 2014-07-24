@@ -17,12 +17,12 @@
 class User < ActiveRecord::Base
   validates :name, :email, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6, { allow_nil: true } }
-  before_validation :ensure_session_token!
+  validates :password, length: { minimum: 6, allow_nil: true }
+  before_validation :ensure_session_token
 
   def self.find_by_credentials(credentials)
     user = User.find_by_email(credentials[:email])
-    return nil if user
+    return nil if user.nil?
     return user if user.is_password?(credentials[:password])
     return nil
   end

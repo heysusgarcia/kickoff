@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     else
       flash.now[:errors] = ['Invalid password and/or email']
       render :new
+    end
   end
 
   def destroy
