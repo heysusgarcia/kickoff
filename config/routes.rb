@@ -5,5 +5,6 @@ ShoeApp::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
+    resources :projects, except: [:new, :edit]
   end
 end
