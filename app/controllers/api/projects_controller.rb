@@ -1,5 +1,7 @@
 module Api
   class ProjectsController < ApplicationController
+    before_action :restrict_create, only: [:create]
+    
     def create
       @project = Project.new(project_params)
       @project.founder_id = current_user.id

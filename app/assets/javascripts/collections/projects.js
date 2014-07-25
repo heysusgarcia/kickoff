@@ -15,5 +15,9 @@ ShoeApp.Collections.Projects = Backbone.Collection.extend({
       });
     }
     return project;
+  },
+
+  recent: function() {
+    return new ShoeApp.Collections.Projects(this.slice(-3));
   }
 });

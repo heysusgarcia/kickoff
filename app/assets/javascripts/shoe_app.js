@@ -4,7 +4,10 @@ window.ShoeApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    ShoeApp.projects = new ShoeApp.Projects.Collections();
+    ShoeApp.projects = new ShoeApp.Collections.Projects();
+    new ShoeApp.Routers.AppRouter({
+      $rootEl: $('.main')
+    });
     Backbone.history.start();
   }
 };

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :restrict_profile_settings, only: [:edit]
+
   def new
   end
 
@@ -38,6 +40,6 @@ class UsersController < ApplicationController
   end
 
   def restrict_profile_settings
-    redirect_to root_url unless current_user.id == params[:id]
+    redirect_to root_url unless current_user.id == params[:id].to_i
   end
 end

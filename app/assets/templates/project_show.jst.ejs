@@ -1,0 +1,20 @@
+<img src="">
+<%= project.escape("title") %><br>
+<%= project.escape("description")%><br><br>
+<ul>
+  <li class="funded inline-block mr1">
+    <strong class="block h6"><%= project.percent_funded %></strong>
+    <span class="grey-dark">funded</span>
+  </li>
+
+  <li class="pledged inline-block mr1">
+    <strong class="block h6"> $<%= project.escape('amount_raised') %></strong>
+    <span class="grey-dark">pledged</span>
+  </li>
+
+  <li class="pledged inline-block mr1"
+      data-end_date="<%=project.escape('goal_date')%>">
+    <strong class="block h6">Xdays</strong>
+    <span class="grey-dark">days to go</span>
+  </li>
+</ul>
