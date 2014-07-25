@@ -1,6 +1,8 @@
 ShoeApp.Views.NewProject = Backbone.View.extend({
   template: JST['new_project'],
 
+  className: 'container container-fluid',
+
   events: {
     "submit form" : "submit"
   },
