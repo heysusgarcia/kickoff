@@ -22,9 +22,12 @@ class Project < ActiveRecord::Base
   validate :funding_goal_min_1_dollar
 
   belongs_to :founder, class_name: "User", foreign_key: :founder_id
+  has_many :project_backings, class_name: "ProjectFunding",
+            foreign_key: :project_id
   has_many :funders, through: :project_backings, source: :funder
-  has_many :followers, through: :followed_projects, source: :follower
-  
+  has_many :followings, class_name: "ProjectFollowing", foreign_key: :follower_id
+  has_many :followers, through: :followings, source: :follower
+
 
   def self.recent
     Project.last(4)

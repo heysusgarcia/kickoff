@@ -1,10 +1,12 @@
 ShoeApp.Views.ProjectShow = Backbone.View.extend({
-  template: JST['project_show'],
+  template: JST['project_show/project_show'],
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this._homeView = new HomeView();
-    this._commentView = new CommentView();
+    this._homeView = new ShoeApp.Views.ProjectHome();
+    this._commentsView = new ShoeApp.Views.ProjectComments();
+    this._updatesView = new ShoeApp.Views.ProjectUpdates();
+    this._backersView = new ShoeApp.Views.ProjectBackers();
     this._currentView = this._homeView;
   },
 
@@ -27,10 +29,28 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
   },
 
   showUpdates: function(event){
-    event.preventDefual();
+    event.preventDefault();
     this._currentView = this._updatesView;
     this.render();
   },
+
+  showBackers: function(event) {
+    event.preventDefault();
+    this._currentView = this._backersView;
+    this.render();
+  },
+
+  showComments: function(event) {
+    event.preventDefault();
+    this._currentView = this._backersView;
+    this.render();
+  },
+
+  showHome: function(event) {
+    event.preventDefault();
+    this._currentView = this._homeView;
+    this.render();
+  }
 
   // remove: override the remove method, call remove on the subview
   // and the entire/big/parent view.

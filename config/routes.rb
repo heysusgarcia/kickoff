@@ -6,5 +6,8 @@ ShoeApp::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :projects, except: [:new, :edit]
+    resources :updates, only: [:create, :show]
+    resources :project_fundings, only: [:create]
+    resources :project_followings, only: [:create]
   end
 end

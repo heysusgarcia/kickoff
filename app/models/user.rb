@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :started_projects, class_name: "Project", foreign_key: :founder_id
   has_many :followed_projects, class_name: "ProjectFollowing",
             foreign_key: :follower_id
-  has_many :project_backings, class_name: "ProjectFunding",
+  has_many :backed_projects, class_name: "ProjectFunding",
             foreign_key: :funder_id
 
   def self.find_by_credentials(credentials)

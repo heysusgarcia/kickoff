@@ -27,7 +27,7 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
           });
         },
       error: function() {
-        Backbone.history.navigate("/session/new", { trigger: true });
+        document.location.href="/session/new/";
       }
     });
   }

@@ -28,8 +28,13 @@ module Api
     end
 
     def show
+      @project = Project.includes(:funders, :followers).find(params[:id])
+      render :show
+    end
+
+    def followers
       @project = Project.find(params[:id])
-      render json: @project
+      render json: @project.followers
     end
 
     def update
