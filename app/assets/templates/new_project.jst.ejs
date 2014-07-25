@@ -20,10 +20,23 @@
     </div>
 
     <div class="form-group">
+      <label for="category"></label>
+      <select name="project[category]" id="category"
+            class="form-control">
+        <option value="casual">Casual</option>
+        <option value="basketball">Basketball</option>
+        <option value="skateboarding">Skateboarding</option>
+        <option value="baseball">Baseball</option>
+        <option value="football">Football</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="duration"></label>
       <input type="text" name="project[goal_date]" id="duration"
             class="form-control" placeholder="Duration">
     </div>
 
+    <input type="submit" value="Create" class="btn btn-primary">
   </form>
 </div>

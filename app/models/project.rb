@@ -16,7 +16,7 @@
 #
 
 class Project < ActiveRecord::Base
-  validates :founder_id, :title, :description,
+  validates :founder_id, :title, :description, :founder_name,
             :funding_goal, :duration, :category, presence: true
   validates :funding_goal_min_1_dollar
 
