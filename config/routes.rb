@@ -14,7 +14,6 @@ ShoeApp::Application.routes.draw do
     resources :updates, only: [:create, :show]
     resources :project_fundings, only: [:create]
     resources :project_followings, only: [:create]
-
     resources :users, only: [:index]
   end
 end

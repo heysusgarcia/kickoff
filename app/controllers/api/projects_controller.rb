@@ -51,9 +51,7 @@ module Api
       end
     end
 
-
     private
-
     def project_params
       params.require(:project).permit(:title, :description, :funding_goal,
         :category, :duration, :website

@@ -39,3 +39,14 @@ class Project < ActiveRecord::Base
     funding_goal >= 1
   end
 end
+
+# Nested resources/custom member GET action:
+# * "/api/projects/123/followers"
+# * ProjectsController#followers => render json: @project.followers
+# * "/api/projects/123/funders"
+
+# Backbone:
+# * ProjectFollowers collection
+#      * Route: /api/projects/???/followers
+#      * Model: User
+#      * Write a Project#followers association coll method
