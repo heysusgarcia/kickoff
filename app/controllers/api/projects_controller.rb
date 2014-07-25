@@ -1,7 +1,7 @@
 module Api
   class ProjectsController < ApplicationController
     before_action :restrict_create, only: [:create]
-    
+
     def create
       @project = Project.new(project_params)
       @project.founder_id = current_user.id
@@ -42,7 +42,7 @@ module Api
 
     def project_params
       params.require(:project).permit(:title, :description, :funding_goal,
-        :amount_raised, :goal_date
+        :category, :duration, :website
       )
     end
 

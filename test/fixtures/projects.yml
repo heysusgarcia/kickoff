@@ -8,9 +8,11 @@
 #  description   :text             not null
 #  funding_goal  :integer          not null
 #  amount_raised :integer          default(0)
-#  goal_date     :date             not null
 #  created_at    :datetime
 #  updated_at    :datetime
+#  duration      :integer          not null
+#  website       :text
+#  category      :string(255)      not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
