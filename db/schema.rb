@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725053002) do
+ActiveRecord::Schema.define(version: 20140725175157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "followed_projects", force: true do |t|
+    t.string   "project_title", null: false
+    t.integer  "follower_id",   null: false
+    t.integer  "project_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "followed_projects", ["follower_id"], name: "index_followed_projects_on_follower_id", using: :btree
+  add_index "followed_projects", ["project_id"], name: "index_followed_projects_on_project_id", using: :btree
+
+  create_table "funded_projects", force: true do |t|
+    t.string   "project_title", null: false
+    t.integer  "amount_funded", null: false
+    t.integer  "project_id",    null: false
+    t.integer  "funder_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "funded_projects", ["funder_id"], name: "index_funded_projects_on_funder_id", using: :btree
+  add_index "funded_projects", ["project_id"], name: "index_funded_projects_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.integer  "founder_id",                null: false

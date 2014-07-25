@@ -8,9 +8,6 @@ window.ShoeApp = {
     new ShoeApp.Routers.AppRouter({
       $rootEl: $('#main')
     });
-    // recentProjects = ShoeApp.projects.fetch({
-    //   data: {type: 'recent'}
-    // });
     Backbone.history.start();
   }
 };

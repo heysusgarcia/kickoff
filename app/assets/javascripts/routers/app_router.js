@@ -17,16 +17,12 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
 
   showProject: function(id) {
     var project = ShoeApp.projects.getOrFetch(id);
-
-
   },
 
   newProject: function() {
-    var project = new ShoeApp.Models.Project();
     var newProjectView = new ShoeApp.Views.NewProject({
-      model: project
+      collection: ShoeApp.projects
     });
-
     this._swapView(newProjectView);
   },
 

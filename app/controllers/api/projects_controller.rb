@@ -20,13 +20,6 @@ module Api
     end
 
     def index
-      # if params['type'] == "recent"
-      #   @projects = Project.recent
-      # elsif params['type'] == 'popular'
-      #   @projects = Project.popular
-      # else
-      #   @projects = Project.all
-      # end
       @projects = Project.all
       render json: @projects
     end
