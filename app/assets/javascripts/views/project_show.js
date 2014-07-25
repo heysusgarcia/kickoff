@@ -3,13 +3,16 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this._homeView = new HomeView();
+    this._commentView = new CommentView();
+    this._currentView = this._homeView;
   },
 
   className: 'container container-fluid',
 
   events: {
-    "click a#home" : "",
-    "click a#updates" : "",
+    "click a#home" : "showHome",
+    "click a#updates" : "showUpdates",
     "click a#backers" : "",
     "click a#comments" : ""
   },
@@ -19,6 +22,20 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
+    this.$('.project-views').html(this._currentView.$el);
     return this;
   },
+
+  showUpdates: function(event){
+    event.preventDefual();
+    this._currentView = this._updatesView;
+    this.render();
+  },
+
+  // remove: override the remove method, call remove on the subview
+  // and the entire/big/parent view.
+
+
+
+
 });

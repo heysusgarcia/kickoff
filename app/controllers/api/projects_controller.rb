@@ -1,15 +1,18 @@
 module Api
   class ProjectsController < ApplicationController
-    before_action :restrict_create, only: [:create]
 
     def create
       @project = Project.new(project_params)
-      @project.founder_id = current_user.id
-      @project.founder_name = current_user.name
-      if @project.save
-        render json: @project
+      if !signed_in?
+        render json: @project.errors.full_messages, status: :not_found
       else
-        render json: @project.errors.full_messages, status: :unprocessable_entity
+        @project.founder_id = current_user.id
+        @project.founder_name = current_user.name
+        if @project.save
+          render json: @project
+        else
+          render json: @project.errors.full_messages, status: :unprocessable_entity
+        end
       end
     end
 
@@ -45,10 +48,6 @@ module Api
       params.require(:project).permit(:title, :description, :funding_goal,
         :category, :duration, :website
       )
-    end
-
-    def restrict_create
-      redirect_to root_url unless signed_in?
     end
 
   end

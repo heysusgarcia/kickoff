@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: funded_projects
+# Table name: project_fundings
 #
 #  id            :integer          not null, primary key
 #  project_title :string(255)      not null
@@ -11,16 +11,10 @@
 #  updated_at    :datetime
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+class ProjectFunding < ActiveRecord::Base
+  validates :project_title, :amount_funded, :project_id,
+            :funder_id, presence: true
 
-one:
-  project_title: MyString
-  amount_funded: 1
-  project_id: 1
-  funder_id: 1
+  belongs_to :funder, class_name: "User", foreign_key: :funder_id
 
-two:
-  project_title: MyString
-  amount_funded: 1
-  project_id: 1
-  funder_id: 1
+end

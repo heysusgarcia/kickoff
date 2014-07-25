@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: followed_projects
+# Table name: project_followings
 #
 #  id            :integer          not null, primary key
 #  project_title :string(255)      not null
@@ -10,10 +10,9 @@
 #  updated_at    :datetime
 #
 
-require 'test_helper'
+class ProjectFollowing < ActiveRecord::Base
+  validates :project_title, :follower_id, :project_id, presence: true
 
-class FollowedProjectTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  belongs_to :follower, class_name: "User", foreign_key: :follower_id
+
 end
