@@ -13,8 +13,8 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
   events: {
     "click a#home" : "showHome",
     "click a#updates" : "showUpdates",
-    "click a#backers" : "",
-    "click a#comments" : ""
+    "click a#backers" : "showBackers",
+    "click a#comments" : "showComments"
   },
 
   render: function() {
