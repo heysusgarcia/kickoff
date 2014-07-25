@@ -6,8 +6,11 @@ window.ShoeApp = {
   initialize: function() {
     ShoeApp.projects = new ShoeApp.Collections.Projects();
     new ShoeApp.Routers.AppRouter({
-      $rootEl: $('.main')
+      $rootEl: $('#main')
     });
+    // recentProjects = ShoeApp.projects.fetch({
+    //   data: {type: 'recent'}
+    // });
     Backbone.history.start();
   }
 };

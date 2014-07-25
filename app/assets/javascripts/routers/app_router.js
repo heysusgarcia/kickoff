@@ -8,14 +8,14 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
   },
 
   homepage: function () {
-    var homepage = new ShoeApp.Views.Homepage({});
+    var homepage = new ShoeApp.Views.Homepage();
     this._swapView(homepage);
   },
 
 
   _swapView: function(view) {
-    this.currentView && this.currentView.remove();
-    this.currentView = view;
-    this.$rootEl.html(this.currentView.render().$el);
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
   }
  });

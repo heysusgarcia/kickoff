@@ -1,14 +1,36 @@
-<div class="container-fluid">
-  <div class="row">
-    <div id="col-xs-12">
-      <img src=""> //look for image to display as banner
-    </div>
+<div class="row">
+  <div id="col-xs-12">
+    <img src=""> //look for image to display as banner
   </div>
+</div>
 
 
-  <div class="row center-block recent-projects">
-  </div>
+<div class="row center-block recent-projects">
+  <img src="">
+  <% projects.each(function(project) { %>
+    <%= project.escape("title") %><br>
+    <%= project.escape("description")%><br><br>
+    <ul class="project-stats list no-margin h6 no-wrap">
+      <li class="funded inline-block mr1">
+        <strong class="block h6"><%= project.percent_funded %></strong>
+        <span class="grey-dark">funded</span>
+      </li>
 
-  <div class="row center-block popular-projects">
+      <li class="pledged inline-block mr1">
+        <strong class="block h6"> $<%= project.escape('amount_raised') %></strong>
+        <span class="grey-dark">pledged</span>
+      </li>
+
+      <li class="pledged inline-block mr1"
+          data-end_date="<%=project.escape('goal_date')%>">
+        <strong class="block h6">Xdays</strong>
+        <span class="grey-dark">days to go</span>
+      </li>
+    </ul>
   </div>
+  <% })%>
+
+
+
+<div class="row center-block popular-projects">
 </div>

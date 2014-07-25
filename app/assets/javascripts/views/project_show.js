@@ -1,8 +1,6 @@
 ShoeApp.Views.ProjectShow = Backbone.View.extend({
   template: JST['project_show'],
 
-  className: "container-fluid",
-
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -13,5 +11,5 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
     });
     this.$el.html(renderedContent);
     return this;
-  }
+  },
 });

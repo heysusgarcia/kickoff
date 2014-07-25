@@ -13,6 +13,7 @@
 #  duration      :integer          not null
 #  website       :text
 #  category      :string(255)      not null
+#  founder_name  :string(255)      not null
 #
 
 require 'test_helper'

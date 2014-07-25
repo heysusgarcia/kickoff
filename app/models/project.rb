@@ -13,14 +13,19 @@
 #  duration      :integer          not null
 #  website       :text
 #  category      :string(255)      not null
+#  founder_name  :string(255)      not null
 #
 
 class Project < ActiveRecord::Base
   validates :founder_id, :title, :description, :founder_name,
             :funding_goal, :duration, :category, presence: true
-  validates :funding_goal_min_1_dollar
+  validate :funding_goal_min_1_dollar
 
   belongs_to :founder, class_name: "User", foreign_key: :founder_id
+
+  def self.recent
+    Project.last(4)
+  end
 
   private
 

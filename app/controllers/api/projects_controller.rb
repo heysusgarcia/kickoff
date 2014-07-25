@@ -5,6 +5,7 @@ module Api
     def create
       @project = Project.new(project_params)
       @project.founder_id = current_user.id
+      @project.founder_name = current_user.name
       if @project.save
         render json: @project
       else
@@ -19,6 +20,13 @@ module Api
     end
 
     def index
+      # if params['type'] == "recent"
+      #   @projects = Project.recent
+      # elsif params['type'] == 'popular'
+      #   @projects = Project.popular
+      # else
+      #   @projects = Project.all
+      # end
       @projects = Project.all
       render json: @projects
     end
