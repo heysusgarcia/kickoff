@@ -37,6 +37,11 @@ module Api
       render json: @project.followers
     end
 
+    def funders
+      @project = Project.find(params[:id])
+      render json: @project.funders
+    end
+
     def update
       @project = Project.find(params[:id])
       if @project.update_attributes(project_params)
