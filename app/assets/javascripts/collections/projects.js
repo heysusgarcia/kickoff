@@ -1,6 +1,6 @@
 ShoeApp.Collections.Projects = Backbone.Collection.extend({
   model: ShoeApp.Models.Project,
-  url: "api/projects/",
+  url: "/api/projects",
 
   getOrFetch: function(id) {
     var project = ShoeApp.projects.get(id);

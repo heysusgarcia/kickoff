@@ -1,3 +1,3 @@
 ShoeApp.Models.User = Backbone.Model.extend({
-  urlRoot: "/api/projects"
+  urlRoot: "/api/users"
 });

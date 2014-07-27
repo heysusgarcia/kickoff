@@ -6,6 +6,6 @@ ShoeApp.Collections.ProjectFunders = Backbone.Collection.extend({
   },
 
   url: function() {
-    return "api/projects/" + this.project.get("id") + "/funders";
+    return this.project.url() + "/funders";
   }
 });

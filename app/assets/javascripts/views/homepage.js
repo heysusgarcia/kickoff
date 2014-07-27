@@ -1,13 +1,14 @@
 ShoeApp.Views.Homepage = Backbone.View.extend({
   template: JST['homepage'],
 
-  initialize: function() {
-  },
-
   className: 'container container-fluid',
 
+  initialize: function () {
+    this.listenTo(this.collection, 'sync', this.render);
+  },
+
   render: function () {
-    var recentProjects = ShoeApp.projects.recent();
+    var recentProjects = this.collection.recent();
     renderedContent = this.template({
       projects: recentProjects
     });

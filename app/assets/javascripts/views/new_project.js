@@ -25,12 +25,7 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
         Backbone.history.navigate("#/projects/" + newProject.get("id"), {
           trigger: true
           });
-        },
-      error: function() {
-        document.location.href="/session/new/";
-      }
+        }
     });
   }
 });
-///fix this... can i add a success AND error function and if so, will
-///backbone know which to choose? If not, can i do an if else?

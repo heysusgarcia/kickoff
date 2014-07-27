@@ -12,6 +12,10 @@ gem 'rails', '4.1.4'
 gem 'sass-rails', '~> 4.0.3'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
+gem 'figaro'
+gem 'aws-sdk'
+gem 'pusher'
+gem 'filepicker-rails'
 
 group :doc do
   gem 'sdoc', require: false

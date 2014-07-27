@@ -11,7 +11,10 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
   },
 
   homepage: function () {
-    var homepageView = new ShoeApp.Views.Homepage();
+    ShoeApp.projects.fetch();
+    var homepageView = new ShoeApp.Views.Homepage({
+      collection: ShoeApp.projects
+    });
     this._swapView(homepageView);
   },
 
@@ -20,10 +23,14 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
   },
 
   newProject: function() {
-    var newProjectView = new ShoeApp.Views.NewProject({
-      collection: ShoeApp.projects
-    });
-    this._swapView(newProjectView);
+    if (!signedIn) {
+      document.location.href="/session/new";
+    } else {
+      var newProjectView = new ShoeApp.Views.NewProject({
+        collection: ShoeApp.projects
+      });
+      this._swapView(newProjectView);
+    }
   },
 
 

@@ -11,6 +11,5 @@
 
 class Update < ActiveRecord::Base
   validates :project_id
-
   belongs_to :project
 end

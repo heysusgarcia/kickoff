@@ -6,6 +6,6 @@ ShoeApp.Collections.ProjectFollowers = Backbone.Collection.extend({
   },
 
   url: function() {
-    return "api/projects/" + this.project.get("id") + "/followers";
+    return this.project.url() + "/followers";
   }
 });

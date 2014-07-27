@@ -3,16 +3,12 @@ module Api
 
     def create
       @project = Project.new(project_params)
-      if !signed_in?
-        render json: @project.errors.full_messages, status: :not_found
+      @project.founder_id = current_user.id
+      @project.founder_name = current_user.name
+      if @project.save
+        render json: @project
       else
-        @project.founder_id = current_user.id
-        @project.founder_name = current_user.name
-        if @project.save
-          render json: @project
-        else
-          render json: @project.errors.full_messages, status: :unprocessable_entity
-        end
+        render json: @project.errors.full_messages, status: :unprocessable_entity
       end
     end
 
