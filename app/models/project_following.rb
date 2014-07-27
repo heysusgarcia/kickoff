@@ -14,5 +14,5 @@ class ProjectFollowing < ActiveRecord::Base
   validates :project_title, :follower_id, :project_id, presence: true
 
   belongs_to :follower, class_name: "User", foreign_key: :follower_id
-
+  belongs_to :project, class_name: "Project", foreign_key: :follower_id
 end

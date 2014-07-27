@@ -13,7 +13,6 @@ module Api
     end
 
     def restrict_create_access
-      if
     end
 
     def is_founder?(user)
@@ -21,7 +20,3 @@ module Api
     end
   end
 end
-
-
-
-//come back to this. 

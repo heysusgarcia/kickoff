@@ -1,11 +1,11 @@
-json.extract! @project, :title, :description, :funding_goal,
-                        :duration, :amount_raised, :category, :website,
-                        :founder_name
+json.extract! @project, :id, :founder_id, :title, :description, :funding_goal,
+                        :amount_raised, :duration, :website, :category,
+                        :founder_name, :created_at, :updated_at
 
-json.funders @project.funders do |funder|
-  json.extract! funder, :id, :name
+json.followings @project.followings do |following|
+  json.extract! following, :id, :project_title, :project_id
 end
 
-json.followers @project.followers do |follower|
-  json.extract! follower, :id, :name
+json.backings @project.backings do |backing|
+  json.extract! backing, :id, :project_title, :project_id
 end

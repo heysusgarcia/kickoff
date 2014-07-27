@@ -28,7 +28,7 @@ module Api
     end
 
     def show
-      @project = Project.includes(:funders, :followers).find(params[:id])
+      @project = Project.includes(:followings, :backings).find(params[:id])
       render :show
     end
 
