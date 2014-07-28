@@ -45,5 +45,14 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   percent_funded: function() {
     var percent = 100 * (this.escape("amount_raised") / this.escape("funding_goal"));
     return String(percent) + "%";
+  },
+
+  currentUserIsAFunder: function () {
+    var isFunder = this.funders.findWhere({id: currentUser.id});
+    if (isFunder) {
+      return true;
+    } else {
+      return false;
+    }
   }
 });

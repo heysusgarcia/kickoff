@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
             foreign_key: :follower_id
   has_many :backed_projects, class_name: "ProjectFunding",
             foreign_key: :funder_id
+  has_many :comments, class_name: "Comment", foreign_key: :backer_id
 
   def self.find_by_credentials(credentials)
     user = User.find_by_email(credentials[:email])

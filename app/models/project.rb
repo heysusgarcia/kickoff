@@ -29,6 +29,7 @@ class Project < ActiveRecord::Base
   has_many :followings, class_name: "ProjectFollowing", foreign_key: :project_id
   has_many :followers, through: :followings, source: :follower
   has_many :updates
+  has_many :comments
 
 
   def self.recent
