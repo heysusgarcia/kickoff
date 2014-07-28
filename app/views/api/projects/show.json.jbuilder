@@ -12,3 +12,6 @@ end
 
 json.updates @project.updates do |update|
   json.extract! update, :id, :project_id, :body, :created_at
+
+json.comments @project.comments do |comment|
+  json.extract! comment, :id, :project_id, :body, :created_at

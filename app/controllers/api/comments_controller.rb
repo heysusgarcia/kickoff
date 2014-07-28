@@ -19,7 +19,9 @@ module Api
 
     def restrict_commenting
       @project = Project.find(params[:id])
-      redirect_to api_project_url(@project) unless is_backer?(current_user)
+      if !@project.is_backer?(current_user)
+        redirect_to api_project_url(@project)
+      end
     end
   end
 end

@@ -25,7 +25,7 @@ module Api
     end
 
     def show
-      @project = Project.includes(:followings, :backings, :updates).find(params[:id])
+      @project = Project.includes(:followings, :backings, :updates, :comments).find(params[:id])
       render :show
     end
 
@@ -54,10 +54,5 @@ module Api
         :category, :duration, :website
       )
     end
-
-    def require_signed_in
-      redirect_to root_url unless signed_in?
-    end
-
   end
 end

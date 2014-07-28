@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728172928) do
+ActiveRecord::Schema.define(version: 20140728175733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,8 @@ ActiveRecord::Schema.define(version: 20140728172928) do
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
 
   create_table "project_followings", force: true do |t|
-    t.string   "project_title", null: false
-    t.integer  "follower_id",   null: false
-    t.integer  "project_id",    null: false
+    t.integer  "follower_id", null: false
+    t.integer  "project_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,10 +36,8 @@ ActiveRecord::Schema.define(version: 20140728172928) do
   add_index "project_followings", ["project_id"], name: "index_project_followings_on_project_id", using: :btree
 
   create_table "project_fundings", force: true do |t|
-    t.string   "project_title", null: false
-    t.integer  "amount_funded", null: false
-    t.integer  "project_id",    null: false
-    t.integer  "funder_id",     null: false
+    t.integer  "project_id", null: false
+    t.integer  "funder_id",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

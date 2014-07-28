@@ -17,7 +17,13 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     this._updates = this._updates ||
     new ShoeApp.Collections.Updates([], { project: this });
     return this._updates;
-  }
+  },
+
+  comments: function()
+    this._comments = this._comments ||
+    new ShoeApp.Collections.Comments([], { project: this });
+    return this._comments;
+  },
 
   //
   // backings: function () {
@@ -42,6 +48,9 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     } else if (response.updates) {
       this.updates().set(resposne.updates, { parse: true });
       delete response.updates;
+    } else if (response.comments) {
+      this.comments().set(response.comments, { parse: true });
+      delete response.comments;
     }
     // } else if (response.backings){
     //   this.backings().set(response.backings, { parse: true });
@@ -61,6 +70,15 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   currentUserIsAFunder: function () {
     var isFunder = this.funders.findWhere({id: currentUser.id});
     if (isFunder) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
+  currentUserIsABacker: function() {
+    var isBacker = this.backers.findWhere({id: current_user.id });
+    if (isBacker) {
       return true;
     } else {
       return false;

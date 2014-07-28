@@ -32,7 +32,11 @@ class Project < ActiveRecord::Base
   has_many :comments
 
   def is_backer?(user)
-    !Project.funders.where(id: user.id).empty?
+    !self.funders.where(id: user.id).empty?
+  end
+
+  def is_founder?(user)
+    self.founder_id == user.id
   end
 
   private

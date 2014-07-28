@@ -19,12 +19,9 @@ module Api
 
     def restrict_create_access
       @project = Project.find(params[:id])
-      redirect_to api_project_url(@project) unless is_founder?
-    end
-
-    def is_founder?
-      founder_id = Project.find(params[:id]).founder_id
-      founder_id == current_user.id
+      if !project.is_founder?(current_user)
+        redirect_to api_project_url(@project)
+      end
     end
   end
 end
