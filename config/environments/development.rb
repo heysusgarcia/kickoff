@@ -1,6 +1,7 @@
 Rails.application.configure do
 
-
+  config.filepicker_rails.api_key = ENV['filepicker']
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

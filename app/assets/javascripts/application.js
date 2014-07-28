@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require jquery.serializejson
+//= require filepicker
 //= require bootstrap
-//= require underscore
-//= require backbone
 //= require shoe_app
 //= require_tree ../templates
 //= require_tree ./models

@@ -10,7 +10,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
     this._currentView = this._homeView;
   },
 
-  className: 'container container-fluid',
+  className: 'project-show-info',
 
   events: {
     "click a#home" : "showHome",
@@ -24,7 +24,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
-    this.$('.project-views').html(this._currentView.$el);
+    this.$('.tab-content').html(this._currentView.$el);
     return this;
   },
 
