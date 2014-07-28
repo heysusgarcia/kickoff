@@ -2,24 +2,33 @@
 #
 # Table name: projects
 #
-#  id            :integer          not null, primary key
-#  founder_id    :integer          not null
-#  title         :string(255)      not null
-#  description   :text             not null
-#  funding_goal  :integer          not null
-#  amount_raised :integer          default(0)
-#  created_at    :datetime
-#  updated_at    :datetime
-#  duration      :integer          not null
-#  website       :text
-#  category      :string(255)      not null
-#  founder_name  :string(255)      not null
+#  id                         :integer          not null, primary key
+#  founder_id                 :integer          not null
+#  title                      :string(255)      not null
+#  description                :text             not null
+#  funding_goal               :integer          not null
+#  amount_raised              :integer          default(0)
+#  created_at                 :datetime
+#  updated_at                 :datetime
+#  duration                   :integer          not null
+#  website                    :text
+#  category                   :string(255)      not null
+#  founder_name               :string(255)      not null
+#  project_photo_file_name    :string(255)
+#  project_photo_content_type :string(255)
+#  project_photo_file_size    :integer
+#  project_photo_updated_at   :datetime
 #
 
 class Project < ActiveRecord::Base
   validates :founder_id, :title, :description, :founder_name,
             :funding_goal, :duration, :category, presence: true
   validate :funding_goal_min_1_dollar
+  has_attached_file :project_photo,
+                    styles: { medium: "300x300", thumb: "100x100" },
+                    default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :project_photo,
+     content_type: { content_type: ["image/jpeg", "image/png"] }
 
   belongs_to :founder, class_name: "User", foreign_key: :founder_id
   has_many :backings, class_name: "ProjectFunding",
@@ -44,14 +53,3 @@ class Project < ActiveRecord::Base
     funding_goal >= 1
   end
 end
-
-# Nested resources/custom member GET action:
-# * "/api/projects/123/followers"
-# * ProjectsController#followers => render json: @project.followers
-# * "/api/projects/123/funders"
-
-# Backbone:
-# * ProjectFollowers collection
-#      * Route: /api/projects/???/followers
-#      * Model: User
-#      * Write a Project#followers association coll method

@@ -6,6 +6,11 @@
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
+        <div class="form-group">
+          <label for="photo"></label>
+          <input type="file" name="project[profile_photo]" id="photo"
+                 class="form-control">
+        </div>
 
         <div class="form-group">
           <label for="name">Name</label>

@@ -2,16 +2,20 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)      not null
-#  email           :string(255)      not null
-#  password_digest :string(255)      not null
-#  session_token   :string(255)      not null
-#  location        :string(255)
-#  biography       :text
-#  website         :text
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                         :integer          not null, primary key
+#  name                       :string(255)      not null
+#  email                      :string(255)      not null
+#  password_digest            :string(255)      not null
+#  session_token              :string(255)      not null
+#  location                   :string(255)
+#  biography                  :text
+#  website                    :text
+#  created_at                 :datetime
+#  updated_at                 :datetime
+#  profile_photo_file_name    :string(255)
+#  profile_photo_content_type :string(255)
+#  profile_photo_file_size    :integer
+#  profile_photo_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -19,6 +23,13 @@ class User < ActiveRecord::Base
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
+
+  has_attached_file :profile_photo,
+                    styles: { medium: "300x300", thumb: "100x100" },
+                    default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :profile_photo,
+     content_type: { content_type: ["image/jpeg", "image/png"] }
+
 
   has_many :started_projects, class_name: "Project", foreign_key: :founder_id
   has_many :followed_projects, class_name: "ProjectFollowing",

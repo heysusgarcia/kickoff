@@ -8,13 +8,24 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
   },
 
   events: {
-    "submit form" : "submit"
+    "submit form" : "submit",
+    "change .image-input" : "handleFile"
   },
 
   render: function () {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
+  },
+
+  handleFile: function(event) {
+    var file = event.currentTarget.files[0];
+    var view = this;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      view.model.set('project_photo', this.result);
+    }
+    reader.readAsDataURL(file);
   },
 
   submit: function(event) {
