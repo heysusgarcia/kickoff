@@ -1,4 +1,4 @@
-Backbone.Views.NewComment = Backbone.View.extend({
+ShoeApp.Views.NewComment = Backbone.View.extend({
   template: JST['project_show/new_comment'],
 
   events: {
@@ -13,6 +13,13 @@ Backbone.Views.NewComment = Backbone.View.extend({
 
   submit: function(event) {
     event.preventDefault();
-    var $form = this.$el.find('#new-comment-form')
+    var $form = this.$el.find('#new-comment-form');
+    var formData $form.serializeJSON();
+    var that = this;
+    var newComment = new ShoeApp.Models.Comment(formData.comment);
+    newComment.save({}, { success: function() {
+      that.model.comments().add(newComment);
+      }
+    });
   }
 });

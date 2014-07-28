@@ -1,13 +1,10 @@
 <form id="new-comment-form" form="role">
-  <input type="button" name="some_name" value="">
+  <div class="form-group">
+    <label for="body">Leave a comment</label><br>
+    <textarea name="comment[body]" id="body" class="form-control"></textarea>
+  </div>
 
+  <input type="submit" value="Post Comment" class="btn btn-primary">
 </form>
 
-
-<!-- Comment
-project_id: integer
-backer_id
-body: text
-user has many comments through backed-projects source comment
-project has many comments
--->
+<!-- backer_id & project_id can be added on the rails side? -->
