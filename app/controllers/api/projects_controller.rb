@@ -1,5 +1,6 @@
 module Api
   class ProjectsController < ApplicationController
+    before_action :require_signed_in, only: [:create]
 
     def create
       @project = Project.new(project_params)
@@ -24,7 +25,7 @@ module Api
     end
 
     def show
-      @project = Project.includes(:followings, :backings).find(params[:id])
+      @project = Project.includes(:followings, :backings, :updates).find(params[:id])
       render :show
     end
 
@@ -52,6 +53,10 @@ module Api
       params.require(:project).permit(:title, :description, :funding_goal,
         :category, :duration, :website
       )
+    end
+
+    def require_signed_in
+      redirect_to root_url unless signed_in?
     end
 
   end

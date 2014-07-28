@@ -9,3 +9,6 @@ end
 json.backings @project.backings do |backing|
   json.extract! backing, :id, :project_title, :project_id
 end
+
+json.updates @project.updates do |update|
+  json.extract! update, :id, :project_id, :body, :created_at

@@ -31,9 +31,8 @@ class Project < ActiveRecord::Base
   has_many :updates
   has_many :comments
 
-
-  def self.recent
-    Project.last(4)
+  def is_backer?(user)
+    !Project.funders.where(id: user.id).empty?
   end
 
   private

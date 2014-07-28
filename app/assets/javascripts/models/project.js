@@ -13,17 +13,24 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     return this._followers;
   },
 
-  backings: function () {
-    this._backings = this._backings ||
-    new ShoeApp.Collections.ProjectFundings([], { project: this });
-    return this._backings;
-  },
+  updates: function() {
+    this._updates = this._updates ||
+    new ShoeApp.Collections.Updates([], { project: this });
+    return this._updates;
+  }
 
-  followings: function () {
-    this._followings = this._followings ||
-    new ShoeApp.Collections.ProjectFollowings([], { project: this });
-    return this._followings;
-  },
+  //
+  // backings: function () {
+  //   this._backings = this._backings ||
+  //   new ShoeApp.Collections.ProjectFundings([], { project: this });
+  //   return this._backings;
+  // },
+  //
+  // followings: function () {
+  //   this._followings = this._followings ||
+  //   new ShoeApp.Collections.ProjectFollowings([], { project: this });
+  //   return this._followings;
+  // },
 
   parse: function(response) {
     if (response.followers) {
@@ -32,13 +39,17 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     } else if (response.funders) {
       this.funders().set(response.funders, { parse: true });
       delete response.funders;
-    } else if (response.backings){
-      this.backings().set(response.backings, { parse: true });
-      delete response.backings;
-    } else if (response.followings) {
-      this.followings().set(response.followings, { parse: true });
-      delete response.followings;
+    } else if (response.updates) {
+      this.updates().set(resposne.updates, { parse: true });
+      delete response.updates;
     }
+    // } else if (response.backings){
+    //   this.backings().set(response.backings, { parse: true });
+    //   delete response.backings;
+    // } else if (response.followings) {
+    //   this.followings().set(response.followings, { parse: true });
+    //   delete response.followings;
+    // }
     return response;
   },
 

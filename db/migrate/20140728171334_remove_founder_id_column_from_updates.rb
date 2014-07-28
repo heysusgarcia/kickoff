@@ -1,5 +1,5 @@
 class RemoveFounderIdColumnFromUpdates < ActiveRecord::Migration
-  def  change
+  def change
     remove_column :updates, :founder_id
   end
 end

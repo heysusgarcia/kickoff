@@ -7,7 +7,6 @@
 #  body       :text             not null
 #  created_at :datetime
 #  updated_at :datetime
-#  backer_id  :integer
 #
 
 require 'test_helper'
