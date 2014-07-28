@@ -9,6 +9,7 @@ module Api
       })
       if !@project_following.save
         render json: @project_following.errors.full_messages, status: :unprocessable_entity
+      end
     end
   end
 end

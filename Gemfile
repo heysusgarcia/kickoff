@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
 gem 'aws-sdk'
 gem 'pusher'
-gem 'filepicker-rails'
+gem 'paperclip'
 
 group :doc do
   gem 'sdoc', require: false

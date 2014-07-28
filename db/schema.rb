@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728175733) do
+ActiveRecord::Schema.define(version: 20140728220023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,18 +46,21 @@ ActiveRecord::Schema.define(version: 20140728175733) do
   add_index "project_fundings", ["project_id"], name: "index_project_fundings_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
-    t.integer  "founder_id",                 null: false
-    t.string   "title",                      null: false
-    t.text     "description",                null: false
-    t.integer  "funding_goal",               null: false
-    t.integer  "amount_raised",  default: 0
+    t.integer  "founder_id",                             null: false
+    t.string   "title",                                  null: false
+    t.text     "description",                            null: false
+    t.integer  "funding_goal",                           null: false
+    t.integer  "amount_raised",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "duration",                   null: false
+    t.integer  "duration",                               null: false
     t.text     "website"
-    t.string   "category",                   null: false
-    t.string   "founder_name",               null: false
-    t.string   "filepicker_url"
+    t.string   "category",                               null: false
+    t.string   "founder_name",                           null: false
+    t.string   "project_photo_file_name"
+    t.string   "project_photo_content_type"
+    t.integer  "project_photo_file_size"
+    t.datetime "project_photo_updated_at"
   end
 
   add_index "projects", ["founder_id"], name: "index_projects_on_founder_id", using: :btree
@@ -70,16 +73,19 @@ ActiveRecord::Schema.define(version: 20140728175733) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",            null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+    t.string   "name",                       null: false
+    t.string   "email",                      null: false
+    t.string   "password_digest",            null: false
+    t.string   "session_token",              null: false
     t.string   "location"
     t.text     "biography"
     t.text     "website"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "filepicker_url"
+    t.string   "profile_photo_file_name"
+    t.string   "profile_photo_content_type"
+    t.integer  "profile_photo_file_size"
+    t.datetime "profile_photo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
