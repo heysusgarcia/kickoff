@@ -10,7 +10,9 @@ ShoeApp.Views.ProjectHome = Backbone.View.extend({
 
   render: function() {
     var renderedContent = this.template({
-
+      project: this.model
     });
+    this.$el.html(renderedContent);
+    return this;
   }
 });
