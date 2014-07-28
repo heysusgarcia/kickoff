@@ -20,6 +20,10 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
 
   showProject: function(id) {
     var project = ShoeApp.projects.getOrFetch(id);
+    var projectView = new ShoeApp.Views.ProjectShow({
+      model: project
+    });
+    this._swapView(projectView);
   },
 
   newProject: function() {

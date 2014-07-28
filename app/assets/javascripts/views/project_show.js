@@ -51,6 +51,10 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
     this._currentView = this._homeView;
     this.render();
   }
+  //
+  // remove: function() {
+  //   this._currentView && this._currentView.remove() && this.remove();
+  // }
 
   // remove: override the remove method, call remove on the subview
   // and the entire/big/parent view.

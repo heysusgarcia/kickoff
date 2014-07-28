@@ -3,6 +3,10 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
 
   className: 'container container-fluid',
 
+  initialize: function () {
+    this.listenTo(this.collection, 'sync', this.render);
+  },
+
   events: {
     "submit form" : "submit"
   },

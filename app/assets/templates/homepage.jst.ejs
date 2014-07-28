@@ -1,13 +1,118 @@
-<div class="row">
-  <div id="col-xs-12">
-    <img src""> //display/banner/image here
+<div class="banner-image">
+  <!-- background image -->
+</div>
+
+<div class="staff-picks-index">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="tab-content staff-picks">
+          <div class="tab-pane fade active in" id="casual-design">
+            <h3>Staff Picks:Casual</h3>
+            <div class="card">
+              <div class="row">
+                <div class="col-md-6 photo">
+                  <a href="project/show">
+                    <img src="project/image">
+                  </a>
+                </div>
+                <div class="col-md-6 body">
+                  <h4>
+                    <a href="p">Project Name</a>
+                  </h4>
+                  <p class="desc">Summary of project</p>
+                  <p>
+                    <span class="glyphicon glyphicon-marker"></span>
+                    <span class="preview-location">City, ST</span>
+                  </p>
+                  <div class="divider">
+                    <div class="progress-bar" style="width: 0%">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      %
+                      <p class="grey-dark">funded</p>
+                    </div>
+                    <div class="col-md-3">
+                      $
+                      <p class="grey-dark">raised</p>
+                    </div>
+                    <!-- <div class="col-md-3">
+                    </div> if successful toggle and remove days to go? -->
+                    <div class="col-md-3">
+                      x
+                      <p class="grey-dark">days to go</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="basketball-design">
+            <h3>Staff Picks:Basketball</h3>
+            <div class="card">
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="skateboarding-design">
+            <h3>Staff Picks:Skateboarding</h3>
+            <div class="card">
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="baseball-design">
+            <h3>Staff Picks:Baseball</h3>
+            <div class="card">
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="football-design">
+            <h3>Staff Picks:Football</h3>
+            <div class="card">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <ul class="staff-picks-nav">
+        <li class="active">
+          <a href="#casual-design" data-toggle="tab">
+            Casual
+          </a>
+        </li>
+        <li>
+          <a href="#basketball-design" data-toggle="tab">
+            Basketball
+          </a>
+        </li>
+        <li>
+          <a href="#skateboarding-design" data-toggle="tab">
+            Skateboarding
+          </a>
+        </li>
+        <li>
+          <a href="#baseball-design" data-toggle="tab">
+            Baseball
+          </a>
+        </li>
+        <li>
+          <a href="#football-design" data-toggle="tab">
+            Football
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-
 <div class="row center-block recent-projects">
   <% projects.each(function(project) { %>
-    <div class="col-xs-3">30
+    <div class="col-md-3">30
       <img src="">
       <%= project.escape("title") %>
       <%= project.escape("description")%>

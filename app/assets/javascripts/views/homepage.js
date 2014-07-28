@@ -1,8 +1,6 @@
 ShoeApp.Views.Homepage = Backbone.View.extend({
   template: JST['homepage'],
 
-  className: 'container container-fluid',
-
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
   },
