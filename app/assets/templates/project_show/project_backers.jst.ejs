@@ -1,0 +1,18 @@
+<% backers.each(function(backer) { %>
+  <li>
+    <div class="row">
+      <div class="col-md-2">
+        <a href="#/profile/backer_id">
+          <img class="profile-photo" src="profile_photo_url">
+        </a>
+      </div>
+      <div class="col-md-10">
+        <p class="backer-name">
+          <%= backer.escape("name")%>
+          <span class="commenttime grey-dark">some time ago</span>
+        </p>
+        <p>Backed <%= backer.backed_projects.length %> projects!</p>
+      </div>
+    </div>
+  </li>
+<% }) %>

@@ -3,10 +3,18 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this._homeView = new ShoeApp.Views.ProjectHome();
-    this._commentsView = new ShoeApp.Views.ProjectComments();
-    this._updatesView = new ShoeApp.Views.ProjectUpdates();
-    this._backersView = new ShoeApp.Views.ProjectBackers();
+    this._homeView = new ShoeApp.Views.ProjectHome({
+      model: this.model
+    });
+    this._commentsView = new ShoeApp.Views.ProjectComments({
+      model: this.model
+    });
+    this._updatesView = new ShoeApp.Views.ProjectUpdates({
+      model: this.model
+    });
+    this._backersView = new ShoeApp.Views.ProjectFunders({
+      model: this.model
+    });
     this._currentView = this._homeView;
   },
 
@@ -20,7 +28,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
   },
 
   render: function() {
-    renderedContent: this.template({
+    var renderedContent = this.template({
       project: this.model
     });
     this.$el.html(renderedContent);
@@ -58,8 +66,4 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
 
   // remove: override the remove method, call remove on the subview
   // and the entire/big/parent view.
-
-
-
-
 });

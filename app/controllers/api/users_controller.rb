@@ -1,8 +1,7 @@
 module Api
   class UsersController < ApplicationController
-    def index
-      @users = User.all
-      render json: @users
+    def show
+      render json: current_user
     end
   end
 end
