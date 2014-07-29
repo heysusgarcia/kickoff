@@ -1,7 +1,7 @@
 ShoeApp::Application.routes.draw do
   root to: 'static_pages#root'
 
-  resources :users, only: [:new, :create, :edit, :update]
+  resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
@@ -16,6 +16,6 @@ ShoeApp::Application.routes.draw do
     resources :comments, only: [:create]
     resources :project_fundings, only: [:create]
     resources :project_followings, only: [:create]
-    resources :users, only: [:show]
+    resources :users, only: [:show, :update]
   end
 end

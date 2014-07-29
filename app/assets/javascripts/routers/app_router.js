@@ -5,17 +5,36 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "" : "homepage",
+    "profile/edit" : "editProfile",
+    "profile" : "showProfile",
     "projects/new" : "newProject",
     "projects/:id" : "showProject"
-
   },
 
-  homepage: function () {
+  homepage: function() {
     ShoeApp.projects.fetch();
     var homepageView = new ShoeApp.Views.Homepage({
       collection: ShoeApp.projects
     });
     this._swapView(homepageView);
+  },
+
+  editProfile: function() {
+    var currUser = new ShoeApp.Models.User({id: currentUserId});
+    currUser.fetch();
+    var editProfileView = new ShoeApp.Views.EditProfile({
+      model: currUser
+    });
+    this._swapView(editProfileView);
+  },
+
+  showProfile: function() {
+    var currUser = new ShoeApp.Models.User({id: currentUserId});
+    currUser.fetch();
+    var profileView = new ShoeApp.Views.ProfileShow({
+      model: currUser
+    });
+    this._swapView(profileView);
   },
 
   showProject: function(id) {
