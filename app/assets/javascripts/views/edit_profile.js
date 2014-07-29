@@ -24,7 +24,7 @@ ShoeApp.Views.EditProfile = Backbone.View.extend({
     var view = this;
     var reader = new FileReader();
     reader.onload = function(e) {
-      view.model.set('profile_photo', this.result);
+      view.$('#put-photo-here').val(this.result);
     }
     reader.readAsDataURL(file);
   },
@@ -32,5 +32,15 @@ ShoeApp.Views.EditProfile = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var $form = this.$el.find('#edit-user-profile')
+    var formData = $form.serializeJSON()['user'];
+    var that = this;
+
+    debugger
+    this.model.save(formData, {
+      success: function() {
+        Backbone.history.navigate("", { trigger: true });
+      } //change later to simply display a success alert?
+    })
+
   }
 });

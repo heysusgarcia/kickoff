@@ -2,9 +2,14 @@
 
   <div class="form-group">
     <label for="photo"></label>
-    <input type="file" name="project[profile_photo]" id="photo"
+    <input type="file" name="user[photo_file_path]" id="photo"
            class="form-control image-input">
+    <input
+      type='hidden'
+      name='user[profile_photo]'
+      id='put-photo-here'>
   </div>
+
 
   <div class="form-group">
     <label for="name">Name</label>
@@ -37,6 +42,6 @@
            value="<%=user && user.escape('website')%>"><br>
 
   </div>
-  
+
   <input type="submit" value="Save Settings" class="btn btn-primary">
 </form>

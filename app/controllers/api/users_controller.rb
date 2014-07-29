@@ -11,8 +11,9 @@ module Api
 
     def update
       @user = User.find(params[:id])
+      @user.profile_photo = params[:profile_photo]
       if @user.update_attributes(user_profile_params)
-        render json: @user
+        render :show
       else
         render json: @user.errors.full_messages, status: :unprocessable_entity
       end

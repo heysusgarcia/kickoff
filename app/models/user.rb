@@ -24,11 +24,9 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
 
-  has_attached_file :profile_photo,
-                    styles: { medium: "300x300", thumb: "100x100" },
-                    default_url: "/images/:style/missing.png"
+  has_attached_file :profile_photo
   validates_attachment_content_type :profile_photo,
-     content_type: { content_type: ["image/jpeg", "image/png"] }
+     content_type: ["image/jpeg", "image/png", "image/jpg"]
 
 
   has_many :started_projects, class_name: "Project", foreign_key: :founder_id

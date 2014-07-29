@@ -7,14 +7,22 @@ ShoeApp.Views.ProfileShow = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
   },
 
+  events: {
+    "click .nav-tabs a" : "toggleTabs"
+  },
+
   render: function() {
     var renderedContent = this.template({
-      startedProjects: this.model.startedProjects,
-      backedProjects: this.model.backedProjects,
-      followedProjects: this.model.followedProjecs
+      startedProjects: this.model.startedProjects(),
+      backedProjects: this.model.backedProjects(),
+      followedProjects: this.model.followedProjects()
     });
     this.$el.html(renderedContent);
     return this;
-  }
+  },
 
+  toggleTabs: function (event) {
+    event.preventDefault();
+    $(event.target).tab('show');
+  }
 });

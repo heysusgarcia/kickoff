@@ -2,7 +2,7 @@ ShoeApp.Views.ProjectHome = Backbone.View.extend({
   template: JST['project_show/project_home'],
 
   className: 'tab-pane fade active in',
-  id: 'home',
+  id: "home",
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);

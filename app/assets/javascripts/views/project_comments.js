@@ -2,7 +2,7 @@ ShoeApp.Views.ProjectComments = Backbone.CompositeView.extend({
   template: JST['project_show/project_comments'],
 
   className: 'tab-pane fade',
-  id: 'comments',
+  id: "comments",
 
   initialize: function() {
     this.listenTo(this.model.comments(), 'add', this.addComment);

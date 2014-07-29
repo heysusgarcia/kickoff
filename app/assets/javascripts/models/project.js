@@ -33,7 +33,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
       this.funders().set(response.funders, { parse: true });
       delete response.funders;
     } else if (response.updates) {
-      this.updates().set(resposne.updates, { parse: true });
+      this.updates().set(response.updates, { parse: true });
       delete response.updates;
     } else if (response.comments) {
       this.comments().set(response.comments, { parse: true });
