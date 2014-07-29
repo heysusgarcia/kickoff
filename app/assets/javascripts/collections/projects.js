@@ -2,9 +2,9 @@ ShoeApp.Collections.Projects = Backbone.Collection.extend({
   model: ShoeApp.Models.Project,
   url: "/api/projects",
 
-  initialize: function(models, options) {
-    this.user = options.user;
-  },
+  // initialize: function(models, options) {
+  //   this.user = options.user;
+  // },
 
   getOrFetch: function(id) {
     var project = ShoeApp.projects.get(id);

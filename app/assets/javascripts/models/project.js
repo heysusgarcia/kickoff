@@ -1,13 +1,13 @@
 ShoeApp.Models.Project = Backbone.Model.extend({
   urlRoot: "/api/projects",
 
-  funders: function () {
+  funders: function() {
     this._funders = this._funders ||
     new ShoeApp.Collections.ProjectFunders([], { project: this });
     return this._funders;
   },
 
-  followers: function () {
+  followers: function() {
     this._followers = this._followers ||
     new ShoeApp.Collections.ProjectFollowers([], { project: this });
     return this._followers;

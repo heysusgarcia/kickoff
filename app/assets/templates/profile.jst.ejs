@@ -1,0 +1,63 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="" id="started-projects">Started Projects</a></li>
+  <li><a href="#" id="backed-projects">Backed Projects</a></li>
+  <li><a href="#" id="followed-projects">Followed Projects</a></li>
+</ul>
+
+<div class="row">
+  <div class="tab-content">
+    <div class="tab-pane fade active in" id="started-projects">
+      <div class="col-md-4">
+        <div class="row">
+          <% startedProjects.each(function(startedProject) { %>
+            <div class="col-md-3">
+              <a href="#/projects/" + "<%= startedProject.escape('id')%>"
+                <img src="">
+              </a>
+            </div>
+
+            <div class="col-md-9">
+              <h3><%= startedProject.escape('title')%></h3>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="backed-projects">
+      <div class="col-md-4">
+        <div class="row">
+          <% backedProjects.each(function(backedProject) { %>
+            <div class="col-md-3">
+              <a href="#/projects/" + "<%= backedProject.escape('id')%>"
+                <img src="">
+              </a>
+            </div>
+
+            <div class="col-md-9">
+              <h3><%= backedProject.escape('title')%></h3>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="followed-projects">
+      <div class="col-md-4">
+        <div class="row">
+          <% followedProjects.each(function(followedProject) { %>
+            <div class="col-md-3">
+              <a href="#/projects/" + "<%= followedProject.escape('id')%>"
+                <img src="">
+              </a>
+            </div>
+
+            <div class="col-md-9">
+              <h3><%= followedProject.escape('title')%></h3>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
