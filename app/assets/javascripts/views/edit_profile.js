@@ -25,6 +25,7 @@ ShoeApp.Views.EditProfile = Backbone.View.extend({
     var reader = new FileReader();
     reader.onload = function(e) {
       view.$('#put-photo-here').val(this.result);
+      $('#profile-photo').attr('src', e.target.result);
     }
     reader.readAsDataURL(file);
   },

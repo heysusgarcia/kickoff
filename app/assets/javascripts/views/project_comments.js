@@ -5,6 +5,7 @@ ShoeApp.Views.ProjectComments = Backbone.CompositeView.extend({
   id: "comments",
 
   initialize: function() {
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.comments(), 'add', this.addComment);
 
     var newCommentView = new ShoeApp.Views.NewComment({

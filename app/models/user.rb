@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
 
-  has_attached_file :profile_photo
+  has_attached_file :profile_photo,
+                    styles: { medium: "300x300>", thumb: "100x100>" } 
   validates_attachment_content_type :profile_photo,
      content_type: ["image/jpeg", "image/png", "image/jpg"]
 

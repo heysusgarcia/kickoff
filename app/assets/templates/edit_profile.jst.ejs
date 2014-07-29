@@ -1,47 +1,54 @@
-<form id= "edit-user-profile" role="form">
-
-  <div class="form-group">
-    <label for="photo"></label>
-    <input type="file" name="user[photo_file_path]" id="photo"
-           class="form-control image-input">
-    <input
-      type='hidden'
-      name='user[profile_photo]'
-      id='put-photo-here'>
+<div class="row">
+  <div class="col-md-3">
+    <img id="profile-photo" src="#">
   </div>
 
+  <div class="col-md-9">
+    <form id= "edit-user-profile" role="form">
+      <div class="form-group">
+        <label for="photo"></label>
+        <input type="file" name="user[photo_file_path]" id="photo"
+               class="form-control image-input">
+        <input
+          type='hidden'
+          name='user[profile_photo]'
+          id='put-photo-here'>
+      </div>
 
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="user[name]" id="name"
-           value="<%= user.escape('name')%>" class="form-control"><br>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="user[name]" id="name"
+               value="<%= user.escape('name')%>" class="form-control"><br>
+      </div>
+
+      <div class="form-group">
+        <label for="bio">Biography</label>
+        <textarea name="user[biography]" id="bio"
+                  value="<%=user && user.escape('biography')%>"
+                  palceholder="We suggest a short bio"
+                  class="form-control">
+        </textarea><br>
+
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="user[location]" id="location"
+                  palceholder="City, ST" class="form-control"
+                  value="<%=user && user.escape('location')%>"><br>
+
+      </div>
+
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" name="user[website]" id="website"
+               palceholder="www.example.com" class="form-control"
+               value="<%=user && user.escape('website')%>"><br>
+
+      </div>
+
+      <input type="submit" value="Save Settings" class="btn btn-primary">
+    </form>
+
   </div>
-
-  <div class="form-group">
-    <label for="bio">Biography</label>
-    <textarea name="user[biography]" id="bio"
-              value="<%=user && user.escape('biography')%>"
-              palceholder="We suggest a short bio"
-              class="form-control">
-    </textarea><br>
-
-  </div>
-
-  <div class="form-group">
-    <label for="location">Location</label>
-    <input type="text" name="user[location]" id="location"
-              palceholder="City, ST" class="form-control"
-              value="<%=user && user.escape('location')%>"><br>
-
-  </div>
-
-  <div class="form-group">
-    <label for="website">Website</label>
-    <input type="text" name="user[website]" id="website"
-           palceholder="www.example.com" class="form-control"
-           value="<%=user && user.escape('website')%>"><br>
-
-  </div>
-
-  <input type="submit" value="Save Settings" class="btn btn-primary">
-</form>
+</div>

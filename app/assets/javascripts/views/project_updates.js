@@ -5,6 +5,7 @@ ShoeApp.Views.ProjectUpdates = Backbone.CompositeView.extend({
   id: "updates",
 
   initialize: function() {
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.updates(), 'add', this.addUpdate);
 
     var newUpdateView = new ShoeApp.Views.NewUpdate({

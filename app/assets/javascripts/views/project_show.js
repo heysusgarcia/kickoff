@@ -3,18 +3,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-
-
-    this._homeView = new ShoeApp.Views.ProjectHome({
-      model: this.model
-    });
-    this._commentsView = new ShoeApp.Views.ProjectComments({
-      model: this.model
-    });
-    this._backersView = new ShoeApp.Views.ProjectFunders({
-      model: this.model
-    });
-    this._currentView = this._homeView;
+    this._currentView = this.showHome();
   },
 
   className: 'project-show-info',
@@ -32,12 +21,10 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
-    this.renderHomeByDefault();
     return this;
   },
 
   showUpdates: function(event){
-    event.preventDefault();
     var updateView = new ShoeApp.Views.ProjectUpdates({
       model: this.model
     });
@@ -45,21 +32,24 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
   },
 
   showBackers: function(event) {
-    event.preventDefault();
-
-
+    var backersView = new ShoeApp.Views.ProjectFunders({
+      model: this.model
+    });
+    this._swapContent(backersView);
   },
 
   showComments: function(event) {
-    event.preventDefault();
-
-
+    var commentsView = new ShoeApp.Views.ProjectComments({
+      model: this.model
+    });
+    this._swapContent(commentsView);
   },
 
   showHome: function(event) {
-    event.preventDefault();
-
-
+    var homeView = new ShoeApp.Views.ProjectHome({
+      model: this.model
+    });
+    this._swapContent(homeView);
   },
 
   toggleTabs: function(event) {
