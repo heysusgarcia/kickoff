@@ -7,35 +7,42 @@
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
         <div class="form-group">
-          <label for="photo"></label>
           <input type="file" name="project[profile_photo]" id="photo"
                  class="form-control">
         </div>
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" name="user[name]" id="name"
-                 value="<%= current_user.name %>"class="form-control"><br>
+          <input type="text"
+                 name="user[name]"
+                 id="name"
+                 value="<%= current_user.name %>"
+                 class="form-control"
+                 palceholder="Name"><br>
         </div>
 
         <div class="form-group">
-          <label for="bio">Biography</label>
-          <textarea name="user[biography]" id="bio"
-                    palceholder="We suggest a short bio" class="form-control"></textarea><br>
+          <textarea name="user[biography]"
+                    id="bio"
+                    placeholder="We suggest a short bio"
+                    class="form-control">
+          </textarea><br>
 
         </div>
 
         <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" name="user[location]" id="location"
-                    palceholder="City, ST" class="form-control"><br>
-
+          <input type="text"
+                 name="user[location]"
+                 id="location"
+                 palceholder="San Francisco, CA"
+                 class="form-control"><br>
         </div>
 
         <div class="form-group">
-          <label for="website">Website</label>
-          <input type="text" name="user[website]" id="website"
-                 palceholder="www.example.com" class="form-control"><br>
+          <input type="text"
+                 name="user[website]"
+                 id="website"
+                 palceholder="www.example.com"
+                 class="form-control"><br>
 
         </div>
 

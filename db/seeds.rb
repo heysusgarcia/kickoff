@@ -8,3 +8,7 @@
 
 ActiveRecord::Base.transaction do
 end
+
+
+# create a folder/directory in db, add images, then commit to git.
+# use file.open and everything should be good since images will be comitted to git

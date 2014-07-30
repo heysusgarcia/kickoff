@@ -21,6 +21,10 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
     });
     this.$el.html(renderedContent);
     this.showHome();
+    var fundingView = new ShoeApp.Views.FundingButton({
+      model: this.model
+    });
+    this.$('#funding-view').html(fundingView.render().$el);
     return this;
   },
 

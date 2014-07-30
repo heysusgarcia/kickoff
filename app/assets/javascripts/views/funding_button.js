@@ -1,12 +1,12 @@
 ShoeApp.Views.FundingButton = Backbone.View.extend({
   template: function() {
-    return this.open ? JST['funding_form'] : JST['funding_button'];
-  }
-
-  tagName: 'button',
+    return this.open ?
+    JST['project_show/funding_form']():
+    JST['project_show/funding_button']();
+  },
 
   initialize: function() {
-    this.open = falsel;
+    this.open = false;
     this.listenTo(this.model, 'change', this.render);
   },
 
@@ -17,6 +17,8 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
 
   render: function() {
     var renderedContent = this.template();
+    this.$el.html(renderedContent);
+    return this;
   },
 
   beginFunding: function() {
@@ -24,7 +26,7 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
       this.open = true;
       this.render();
     } else {
-      document.location.href="/session/new";  
+      document.location.href="/session/new";
     }
   },
 
@@ -34,15 +36,17 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
 
     var $form = this.$el.find('#funding-form');
     var amountFunded = $form.serializeJSON();
-    var that = this;
-
+    var view = this;
+    var user = new ShoeApp.Models.User({id: currentUserId});
+    user.fetch();
     var newProjectFunding = new ShoeApp.Models.ProjectFunding();
     var amountRaised = this.model.get('amount_raised') + amountFunded;
-    this.model.set({'amount_raised', amountRaised});
+    this.model.set('amount_raised', amountRaised);
     this.model.save({}, { success: function() {
       newProjectFunding.save();
+      view.model.funders().add(user);
       }
     });
     this.render();
-  }
+  } ///i don't feel okay with this, but i can't think of altenative for now.
 });
