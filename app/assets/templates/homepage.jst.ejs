@@ -5,44 +5,45 @@
         <div class="tab-content staff-picks">
           <div class="tab-pane fade active in" id="casual-design">
             <h3>Staff Picks:Casual</h3>
-            <div class="card">
-              <div class="row">
-                <div class="col-md-6 photo">
-                  <a href="project/show">
-                    <img src="project/image">
-                  </a>
-                </div>
-                <div class="col-md-6 body">
-                  <h4>
-                    <a href="p">Project Name</a>
-                  </h4>
-                  <p class="desc">Summary of project</p>
-                  <p>
-                    <span class="glyphicon glyphicon-marker"></span>
-                    <span class="preview-location">City, ST</span>
-                  </p>
-                  <div class="divider">
-                    <div class="progress-bar" style="width: 0%">
+
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-6 photo">
+                    <a href="project/show">
+                      <img src="project/image">
+                    </a>
+                  </div>
+                  <div class="col-md-6 body">
+                    <h4>
+                      <a href="p">Project Name</a>
+                    </h4>
+                    <p class="desc">Summary of project</p>
+                    <p>
+                      <span class="glyphicon glyphicon-marker"></span>
+                      <span class="preview-location">City, ST</span>
+                    </p>
+                    <div class="divider">
+                      <div class="progress-bar" style="width: 0%">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        %
+                        <p class="grey-dark">funded</p>
+                      </div>
+                      <div class="col-md-3">
+                        $
+                        <p class="grey-dark">raised</p>
+                      </div>
+                      <!-- <div class="col-md-3">
+                      </div> if successful toggle and remove days to go? -->
+                      <div class="col-md-3">
+                        x
+                        <p class="grey-dark">days to go</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-3">
-                      %
-                      <p class="grey-dark">funded</p>
-                    </div>
-                    <div class="col-md-3">
-                      $
-                      <p class="grey-dark">raised</p>
-                    </div>
-                    <!-- <div class="col-md-3">
-                    </div> if successful toggle and remove days to go? -->
-                    <div class="col-md-3">
-                      x
-                      <p class="grey-dark">days to go</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
 
             </div>
           </div>
@@ -118,9 +119,19 @@
           <h3><%= project.escape('title')%></h3>
           <h6><%= project.escape('founder_name')%></h6>
           <p><%= project.escape('description')%></p>
+
+          <div class="progress">
+            <div class="progress-bar"
+                 role="progressbar"
+                 aria-valuenow="60"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 style="width: <%=project.percentFunded%>;">
+            </div>
+          </div>
           <ul class="no-margin">
             <li class="inline-block">
-              <strong class="block h6"><%= project.percent_funded() %></strong>
+              <strong class="block h6"><%= project.percentFunded() %></strong>
               <span class="grey">funded</span>
             </li>
 
@@ -130,8 +141,8 @@
             </li>
 
             <li class="inline-block">
-              <strong class="block h6"><%= project.percent_funded() %></strong>
-              <span class="grey">pledged</span>
+              <strong class="block h6">?</strong>
+              <span class="grey">days to go</span>
             </li>
 
           </ul>
