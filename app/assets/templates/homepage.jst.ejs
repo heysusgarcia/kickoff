@@ -110,32 +110,42 @@
   </div>
 </div>
 
-<div class="row center-block recent-projects">
+
+<div class="row">
   <% projects.each(function(project) { %>
-    <div class="col-md-3">30
-      <img src="">
-      <%= project.escape("title") %>
-      <%= project.escape("description")%>
-      <ul class="project-stats list no-margin h6 no-wrap">
-        <li class="funded inline-block mr1">
-          <strong class="block h6"><%= project.percent_funded() %></strong>
-          <span class="grey-dark">funded</span>
-        </li>
 
-        <li class="pledged inline-block mr1">
-          <strong class="block h6"> $<%= project.escape('amount_raised') %></strong>
-          <span class="grey-dark">pledged</span>
-        </li>
 
-        <li class="pledged inline-block mr1"
-            data-end_date="<%=project.escape('goal_date')%>">
-          <strong class="block h6">Xdays</strong>
-          <span class="grey-dark">days to go</span>
-        </li>
-      </ul>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img data-src="project.project_photo.url(:medium)" alt="<%=project.escape('title')%>">
+        <div class="caption">
+          <h3><%= project.escape('title')%></h3>
+          <h6><%= project.escape('founder_name')%></h6>
+          <p><%= project.escape('description')%></p>
+          <ul class="no-margin">
+            <li class="inline-block">
+              <strong class="block h6"><%= project.percent_funded() %></strong>
+              <span class="grey">funded</span>
+            </li>
+
+            <li class="inline-block">
+              <strong class="block h6"><%= project.escape('amount_raised') %></strong>
+              <span class="grey">pledged</span>
+            </li>
+
+            <li class="inline-block">
+              <strong class="block h6"><%= project.percent_funded() %></strong>
+              <span class="grey">pledged</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
     </div>
-  <% })%>
+  <% }) %>
 </div>
+
+
 
 
 

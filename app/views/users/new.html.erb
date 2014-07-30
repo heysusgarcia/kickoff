@@ -4,20 +4,29 @@
       <h1>Sign up</h1>
       <form action="/users" method="post" form="role">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" name="user[name]" id="name" class="form-control"><br>
+          <label for="name"></label>
+          <input type="text"
+                 name="user[name]"
+                 id="name"
+                 class="form-control",
+                 placeholder="Name">
         </div>
-
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" name="user[email]" id="email" class="form-control"><br>
+          <label for="email"></label>
+          <input type="text"
+                 name="user[email]"
+                 id="email"
+                 class="form-control",
+                 placeholder="Email">
         </div>
-
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" name="user[password]" id="password" class="form-control"><br>
+          <label for="password"></label>
+          <input type="password"
+                 name="user[password]"
+                 id="password"
+                 class="form-control",
+                 placeholder="Password">
         </div>
 
           <input type="submit" value="Sign up" class="btn btn-primary">
