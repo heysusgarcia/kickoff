@@ -1,12 +1,16 @@
 ShoeApp.Views.NewUpdate = Backbone.View.extend({
   template: JST['project_show/new_update'],
 
+  className: 'container container-fluid',
+   
   events: {
     "submit form" : "submit"
   },
 
   render: function() {
-    var renderedContent = this.template();
+    var renderedContent = this.template({
+      project: this.model
+    });
     this.$el.html(renderedContent);
     return this;
   },

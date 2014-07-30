@@ -1,5 +1,5 @@
 Rails.application.configure do
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
 
   config.paperclip_defaults = {
     :storage => :s3,

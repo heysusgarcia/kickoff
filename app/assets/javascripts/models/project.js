@@ -48,7 +48,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   },
 
   currentUserIsAFunder: function () {
-    var isFunder = this.funders.findWhere({id: currentUserId });
+    var isFunder = this.funders().findWhere({id: currentUserId });
     if (isFunder) {
       return true;
     } else {
@@ -57,7 +57,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   },
 
   currentUserIsABacker: function() {
-    var isBacker = this.backers.findWhere({id: currentUserId });
+    var isBacker = this.funders().findWhere({id: currentUserId });
     if (isBacker) {
       return true;
     } else {

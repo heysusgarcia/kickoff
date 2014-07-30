@@ -1,9 +1,11 @@
-<form id="new-update-form" form="role">
-  <div class="form-group">
-    <label for="body">Leave your update</label>
-    <br>
-    <textarea name="update[body]" id="body" class="form-control"></textarea>
-  </div>
+<% if (project.escape('founder_id') === currentUserId) {%>
+  <form id="new-update-form" form="role">
+    <div class="form-group">
+      <label for="body">Leave your update</label>
+      <br>
+      <textarea name="update[body]" id="body" class="form-control"></textarea>
+    </div>
 
-  <input type="submit" value="Post Update" class="btn btn-primary">
-</form>
+    <input type="submit" value="Post Update" class="btn btn-primary">
+  </form>
+<% } %>
