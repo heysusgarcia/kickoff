@@ -23,7 +23,8 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
     var view = this;
     var reader = new FileReader();
     reader.onload = function(e) {
-      view.model.set('project_photo', this.result);
+      view.$('#put-photo-here').val(this.result);
+      $('#project-photo').attr('src', e.target.result);
     }
     reader.readAsDataURL(file);
   },
@@ -31,9 +32,9 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var $form = this.$el.find('#new-project');
-    var formData = $form.serializeJSON();
+    var formData = $form.serializeJSON()['project']
     var that = this;
-    var newProject = new ShoeApp.Models.Project(formData.project);
+    var newProject = new ShoeApp.Models.Project(formData);
     newProject.save({}, {
       success: function() {
         that.collection.add(newProject);

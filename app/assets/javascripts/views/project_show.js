@@ -3,7 +3,6 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this._currentView = this.showHome();
   },
 
   className: 'project-show-info',
@@ -21,6 +20,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
+    this.showHome();
     return this;
   },
 

@@ -1,7 +1,7 @@
 ShoeApp.Views.ProjectUpdates = Backbone.CompositeView.extend({
   template: JST['project_show/project_updates'],
 
-  className: 'tab-pane fade',
+  className: 'tab-pane fade active in',
   id: "updates",
 
   initialize: function() {
