@@ -34,12 +34,14 @@ class User < ActiveRecord::Base
     :content_type => /\Aimage\/.*\Z/
   )
 
-
   has_many :started_projects, class_name: "Project", foreign_key: :founder_id
-  has_many :followed_projects, class_name: "ProjectFollowing",
+  has_many :project_followings, class_name: "ProjectFollowing",
             foreign_key: :follower_id
-  has_many :backed_projects, class_name: "ProjectFunding",
+  has_many :followed_projects, through: :project_followings,
+            source: :project
+  has_many :project_backings, class_name: "ProjectFunding",
             foreign_key: :funder_id
+  has_many :backed_projects, through: :project_backings, source: :project
 
   def self.find_by_credentials(credentials)
     user = User.find_by_email(credentials[:email])
