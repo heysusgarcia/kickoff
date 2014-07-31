@@ -38,7 +38,6 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
 
     var $form = this.$el.find('#funding-form');
     var amountFunded = parseInt($form.serializeJSON()['project_fund']['fund']);
-    debugger
     var params = $form.serializeJSON()['project_funding'];
     var view = this;
     var user = new ShoeApp.Models.User({id: currentUserId});
@@ -46,7 +45,6 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
     var newProjectFunding = new ShoeApp.Models.ProjectFunding();
     var amountRaised = this.model.get('amount_raised') + amountFunded;
     this.model.set('amount_raised', amountRaised);
-    debugger
     this.model.save({}, { success: function() {
       newProjectFunding.save(params);
       view.model.funders().add(user);

@@ -1,6 +1,7 @@
 json.extract! @project, :id, :founder_id, :founder_name, :title, :description,
                         :amount_raised, :duration, :website, :category, :created_at,
                         :project_photo
+json.medium_url @project.project_photo.url(:medium)
 
 json.updates @project.updates do |update|
   json.id update.id

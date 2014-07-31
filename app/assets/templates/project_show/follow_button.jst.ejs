@@ -1,0 +1,19 @@
+<% if (signedIn && !project.currentUserIsAFollower && !(currentUserId === project.escape('founder_id'))) { %>
+    <input type="hidden"
+           name="project_following[project_id]"
+           value="<%=project.escape('id')%>">
+    <input type="hidden"
+           name="project_following[project_title]"
+           value="<%=project.escape('title')%>">
+    <span class="glyphicon glyphicon-star">
+      <input type="submit" name="Follow" class="btn btn-default">
+    </span>
+  </form>
+<% } %>
+
+
+
+// <form id="following-form" form="role">
+//   <button class="btn btn-default follow">
+//     <span class="glyphicon glyphicon-star"></span>Follow
+//   </button>

@@ -1,4 +1,6 @@
 json.extract! @user, :id, :name, :location, :biography, :website, :profile_photo, :created_at
+json.medium_url @user.profile_photo.url(:small)
+json.medium_url @user.profile_photo.url(:medium)
 
 json.backed_projects @user.backed_projects do |backed_project|
   json.id backed_project.id
