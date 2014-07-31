@@ -65,6 +65,15 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     }
   },
 
+  currentUserIsAFollower: function() {
+    var isFollower = this.followers().findWhere({id: currentUserId });
+    if (isFollower) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   daysLeft: function() {
     var createDate = new Date(this.escape('created_at'));
     var startDate = createDate.getDate();

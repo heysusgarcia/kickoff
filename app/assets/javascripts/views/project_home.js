@@ -13,6 +13,7 @@ ShoeApp.Views.ProjectHome = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
+    debugger
     return this;
   }
 });

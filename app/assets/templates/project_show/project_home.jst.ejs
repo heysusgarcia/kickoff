@@ -1,4 +1,9 @@
 <img src="" id="project-show-photo">
+<% if (signedIn && !project.currentUserIsAFollower && !(currentUserId === project.escape('founder_id'))) { %>
+  <button class="btn btn-default follow">
+    <span class="glyphicon glyphicon-star"></span>Follow
+  </button>
+<% } %>
 <div class="project-pitch">
   <p class="projection-description"><%= project.escape("description")%></p>
 </div>

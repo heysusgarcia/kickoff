@@ -58,9 +58,9 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
   },
 
 
-///getOrFetch hasn't fetched by the time we get to line 64... so no founder_id
   editProject: function(id) {
     var project = ShoeApp.projects.getOrFetch(id);
+    debugger
     if (!(signedIn && ( parseInt(project.escape('founder_id')) === currentUserId))) {
       Backbone.history.navigate("#/projects/" + id, { trigger: true });
     } else {

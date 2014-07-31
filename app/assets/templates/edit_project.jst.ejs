@@ -17,12 +17,15 @@
         </div>
 
         <div class="form-group">
+          <label for="title">Title</labe>
           <input readonly="readonly"
                  class="form-control"
+                 id="title"
                  value="<%=project.escape('title')%>">
         </div>
 
         <div class="form-group">
+          <label for="description">Description</label>
           <textarea name="project[description]"
                     id="description"
                     value="<%=project.escape('description')%>"
@@ -31,6 +34,7 @@
 
         <div class="form-group">
         <div class="input-group">
+          <label for="funding-goal">Goal</label>
           <span class="input-group-addon">$</span>
           <input readonly="readonly"
                  id="funding-goal"
@@ -40,7 +44,7 @@
         </div>
 
         <div class="form-group">
-          <label for="category"></label>
+          <label for="category">Category</label>
           <select name="project[category]"
                   id="category"
                   class="form-control">
