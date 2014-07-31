@@ -26,8 +26,15 @@ class Project < ActiveRecord::Base
   validate :funding_goal_min_1_dollar
   has_attached_file :project_photos
 
-  # validates_attachment_content_type :project_photo,
-    #  content_type: { content_type: ["image/jpeg", "image/png"] }
+  has_attached_file :profile_photo, :styles => {
+    :big => "600x600>",
+    :medium => "300x300>",
+    :small => "50x50#"
+  }
+  validates_attachment_content_type(
+    :profile_photo,
+    :content_type => /\Aimage\/.*\Z/
+  )
 
   belongs_to :founder, class_name: "User", foreign_key: :founder_id
   has_many :backings, class_name: "ProjectFunding",

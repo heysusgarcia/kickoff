@@ -13,7 +13,6 @@ module Api
 
     def update
       @user = User.find(params[:id])
-      # @user.profile_photo = params[:profile_photo]
       if @user.update_attributes(user_profile_params)
         render :show
       else

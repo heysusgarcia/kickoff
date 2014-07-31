@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :profile_photo, :styles => {
     :big => "600x600>",
+    :medium => "300x300>",
     :small => "50x50#"
   }
   validates_attachment_content_type(

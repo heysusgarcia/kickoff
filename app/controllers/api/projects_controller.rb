@@ -1,6 +1,7 @@
 module Api
   class ProjectsController < ApplicationController
     before_action :require_signed_in, only: [:create]
+    wrap_parameters :project, include: [:project_photo]
 
     def create
       @project = Project.new(project_params)
