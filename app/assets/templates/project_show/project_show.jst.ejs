@@ -15,11 +15,11 @@
 
   <div class="col-md-4 pull-right">
     <div class="project-details">
-      <h1 class="backers">num</h1>
+      <h1 class="backers"><%= project.funders().length %></h1>
       <span class="backers-span">backers</span>
-      <h1 class="goal">num</h1>
+      <h1 class="goal"><%=project.escape('amount_raised')%></h1>
       <span class="goal-span">pledged of $<%=project.escape("funding_goal")%> goal</span>
-      <h1 class="days-left">x</h1>
+      <h1 class="days-left"><%= project.daysLeft()%></h1>
       <span class="days-left-span">days to go</span>
         <div id="funding-view">
 

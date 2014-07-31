@@ -1,6 +1,6 @@
 ShoeApp.Collections.Projects = Backbone.Collection.extend({
   model: ShoeApp.Models.Project,
-  url: "/api/projects",
+  url: "api/projects/",
 
   // initialize: function(models, options) {
   //   this.user = options.user;
@@ -12,7 +12,7 @@ ShoeApp.Collections.Projects = Backbone.Collection.extend({
       project.fetch();
     } else {
       project = new ShoeApp.Models.Project({ id: id });
-      project.save({}, {
+      project.fetch({
         success: function () {
           ShoeApp.projects.add(project);
         }

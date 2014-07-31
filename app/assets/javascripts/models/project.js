@@ -63,5 +63,26 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     } else {
       return false;
     }
+  },
+
+  daysLeft: function() {
+    var createDate = new Date(this.escape('created_at'));
+    var startDate = createDate.getDate();
+    var startYear = createDate.getFullYear();
+    var startMonth = createDate.getMonth();
+    var a = moment([startYear, startMonth, startDate]);
+
+    var dateNow = new Date();
+    var currDate = dateNow.getDate();
+    var currYear = dateNow.getFullYear();
+    var currMonth = dateNow.getMonth();
+    var b = moment([currYear, currMonth, currDate]);
+    var daysSince = b.diff(a, 'days');
+
+    if ( daysSince < this.escape('duration')) {
+      return this.escape('duration') - daysSince;
+    } else {
+      return 0;
+    }
   }
 });

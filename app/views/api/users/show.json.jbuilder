@@ -1,22 +1,22 @@
-json.extract! @user do |json, user|
-  json.id user.id
-  json.title user.name
-  json.location user.location
-  json.thumb_url user.profile_photo.url(:thumb)
-  json.medium_url user.profile_photo.url(:medium)
-  json.biography user.biography
-  json.website user.website
-  json.created_at project.created_at
-end
+json.extract! @user, :id, :name, :location, :biography, :website, :profile_photo, :created_at
 
 json.backed_projects @user.backed_projects do |backed_project|
-  json.extract! backed_project, :id, :project_id, :project_title, :amount_funded
+  json.id backed_project.id
+  json.project_id backed_project.project_id
+  json.project_title backed_project.project_title
+  json.amount_funded backed_project.amount_funded
 end
 
 json.started_projects @user.started_projects do |started_project|
-  json.extract! started_project, :id, :founder_name, :title
+  json.id started_project.id
+  json.founder_name started_project.founder_name
+  json.title started_project.title
+  json.medium_url started_project.project_photo.url(:medium)
+  json.photo_url started_project.project_photo.url
 end
 
 json.followed_projects @user.followed_projects do |followed_project|
-  json.extract! followed_project, :id, :project_title
+  json.id followed_project.id
+  json.project_id followed_project.project_id
+  jsob.project_title followed_project.project_title
 end

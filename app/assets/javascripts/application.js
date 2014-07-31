@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require jquery.serializejson
+//= require moment
 //= require filepicker
 //= require bootstrap
 //= require shoe_app
