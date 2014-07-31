@@ -1,7 +1,9 @@
 ShoeApp.Views.FundingButton = Backbone.View.extend({
   template: function() {
     return this.open ?
-    JST['project_show/funding_form']():
+    JST['project_show/funding_form']({
+      project: this.model
+    }):
     JST['project_show/funding_button']();
   },
 
@@ -22,11 +24,11 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
   },
 
   beginFunding: function() {
-    if (currentUserId) {
+    if (!signedIn) {
+      document.location.href="/session/new";
+    } else {
       this.open = true;
       this.render();
-    } else {
-      document.location.href="/session/new";
     }
   },
 
@@ -35,15 +37,18 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
     this.open = false;
 
     var $form = this.$el.find('#funding-form');
-    var amountFunded = $form.serializeJSON();
+    var amountFunded = parseInt($form.serializeJSON()['project_fund']['fund']);
+    debugger
+    var params = $form.serializeJSON()['project_funding'];
     var view = this;
     var user = new ShoeApp.Models.User({id: currentUserId});
     user.fetch();
     var newProjectFunding = new ShoeApp.Models.ProjectFunding();
     var amountRaised = this.model.get('amount_raised') + amountFunded;
     this.model.set('amount_raised', amountRaised);
+    debugger
     this.model.save({}, { success: function() {
-      newProjectFunding.save();
+      newProjectFunding.save(params);
       view.model.funders().add(user);
       }
     });

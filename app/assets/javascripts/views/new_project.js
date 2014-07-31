@@ -32,12 +32,12 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var $form = this.$el.find('#new-project');
-    var formData = $form.serializeJSON()['project']
-    var that = this;
+    var formData = $form.serializeJSON()['project'];
+    var view = this;
     var newProject = new ShoeApp.Models.Project(formData);
     newProject.save({}, {
       success: function() {
-        that.collection.add(newProject);
+        view.collection.add(newProject);
         Backbone.history.navigate("#/projects/" + newProject.get("id"), {
           trigger: true
           });

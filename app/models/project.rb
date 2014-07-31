@@ -24,11 +24,10 @@ class Project < ActiveRecord::Base
   validates :founder_id, :title, :description, :founder_name,
             :funding_goal, :duration, :category, presence: true
   validate :funding_goal_min_1_dollar
-  has_attached_file :project_photo,
-                    styles: { medium: "300x300", thumb: "100x100" },
-                    default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :project_photo,
-     content_type: { content_type: ["image/jpeg", "image/png"] }
+  has_attached_file :project_photos
+
+  # validates_attachment_content_type :project_photo,
+    #  content_type: { content_type: ["image/jpeg", "image/png"] }
 
   belongs_to :founder, class_name: "User", foreign_key: :founder_id
   has_many :backings, class_name: "ProjectFunding",

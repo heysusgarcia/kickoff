@@ -3,6 +3,8 @@ module Api
     before_action :require_signed_in, only: [:show, :backed_projects,
       :started_projects, :followed_projects]
     before_action :restrict_profile_settings, only: [:update]
+    wrap_parameters :user, include: [:profile_photo]
+
 
     def show
       @user = User.includes(:backed_projects, :started_projects, :followed_projects).find(current_user.id)

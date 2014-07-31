@@ -12,7 +12,7 @@ ShoeApp.Collections.Projects = Backbone.Collection.extend({
       project.fetch();
     } else {
       project = new ShoeApp.Models.Project({ id: id });
-      project.save({
+      project.save({}, {
         success: function () {
           ShoeApp.projects.add(project);
         }

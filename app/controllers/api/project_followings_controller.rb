@@ -11,5 +11,9 @@ module Api
         render json: @project_following.errors.full_messages, status: :unprocessable_entity
       end
     end
+    private
+    def project_following_params
+      params.require(:project_following).permit(:project_id, :project_title)
+    end
   end
 end

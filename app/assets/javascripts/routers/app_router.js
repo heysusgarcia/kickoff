@@ -57,17 +57,19 @@ ShoeApp.Routers.AppRouter = Backbone.Router.extend({
     }
   },
 
-  // editProject: function(id) {
-  //   var project = ShoeApp.projects.getOrFetch(id);
-  //   if !(signedIn && (project.escape('founder_id') === currentUserId)) {
-  //     Backbone.history.navigate("#/projects/" + id, { trigger: true });
-  //   } else {
-  //     var editProjectView = new ShoeApp.Views.EditProfile({
-  //       model: project
-  //     });
-  //   }
-  //   this._swapView(editProjectView);
-  // }
+
+///getOrFetch hasn't fetched by the time we get to line 64... so no founder_id
+  editProject: function(id) {
+    var project = ShoeApp.projects.getOrFetch(id);
+    if (!(signedIn && ( parseInt(project.escape('founder_id')) === currentUserId))) {
+      Backbone.history.navigate("#/projects/" + id, { trigger: true });
+    } else {
+      var editProjectView = new ShoeApp.Views.EditProject({
+        model: project
+      });
+      this._swapView(editProjectView);
+    }
+  },
 
 
   _swapView: function(view) {
