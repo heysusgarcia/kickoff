@@ -44,9 +44,11 @@ div.center-block {
 .mr1 {
   margin-right: 10px;
 }
-.project-stats {
+ul.project-stats {
   line-height: 1.25em;
   font-size: 12px;
+  text-align: left;
+  padding-left: 0px;
 }
 .no-margin {
   margin: 0;
@@ -128,6 +130,7 @@ ul.staff-picks-nav a:active {
 div.thumbnail {
   height: 500px;
   width: 220px;
+  padding: 10px;
 }
 .project-title {
   font-size: 12px;
@@ -146,4 +149,21 @@ div.thumbnail {
 }
 .progress {
   height: 10px;
+  vertical-align: baseline;
+  margin-bottom: 0px;
+}
+.profile-button {
+  margin: 0px;
+}
+.profile-dropdown {
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.profile-button {
+  padding: 0px;
+  border: none;
+}
+.pl {
+  padding-right: 10px;
 }

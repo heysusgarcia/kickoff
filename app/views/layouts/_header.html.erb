@@ -17,13 +17,14 @@
 
 
     <% if signed_in? %>
-    <div class="dropdown pull-right no-margin col block px1 py2">
-      <button class="btn btn-default dropdown-toggle"
+    <div class="dropdown pull-right no-margin col block profile-dropdown">
+      <button class="btn btn-default dropdown-toggle profile-button"
               type="button"
               id="dropdownMenu1"
               data-toggle="dropdown">
               <% if (signed_in?)%>
                 <%= image_tag @current_user.profile_photo(:small) %>
+                <span class="caret"></span>
               <% else %>
                 <span class="glyphicon glyphicon-user"></span>
               <% end %>

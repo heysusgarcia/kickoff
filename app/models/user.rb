@@ -27,8 +27,10 @@ class User < ActiveRecord::Base
   has_attached_file :profile_photo, :styles => {
     :big => "600x600>",
     :medium => "300x300>",
-    :small => "50x50#"
-  }
+    :small => "30x30#"
+  },
+  :default_url => "https://s3-us-west-2.amazonaws.com/shoeappdev/default.png"
+
   validates_attachment_content_type(
     :profile_photo,
     :content_type => /\Aimage\/.*\Z/
