@@ -2,7 +2,10 @@ ShoeApp::Application.routes.draw do
   root to: 'static_pages#root'
 
   resources :users, only: [:new, :create]
-  resource :session, only: [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy] do
+    get :guest
+  end
+
 
   namespace :api, defaults: { format: :json } do
     resources :projects, except: [:new, :edit] do
