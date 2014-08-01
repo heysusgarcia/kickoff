@@ -23,6 +23,6 @@ ShoeApp.Collections.Projects = Backbone.Collection.extend({
   },
 
   recent: function() {
-    return new ShoeApp.Collections.Projects(this.slice(-7));
+    return new ShoeApp.Collections.Projects(this.slice(-8));
   }
 });

@@ -8,6 +8,7 @@ json.backed_projects @user.backed_projects do |backed_project|
   json.title backed_project.title
   json.category backed_project.category
   json.medium_url backed_project.project_photo.url(:medium)
+  json.big_url backed_project.project_photo.url(:big)
 end
 
 json.started_projects @user.started_projects do |started_project|
@@ -15,6 +16,7 @@ json.started_projects @user.started_projects do |started_project|
   json.founder_name started_project.founder_name
   json.title started_project.title
   json.medium_url started_project.project_photo.url(:medium)
+  json.big_url started_project.project_photo.url(:big)
 end
 
 json.followed_projects @user.followed_projects do |followed_project|
@@ -22,4 +24,5 @@ json.followed_projects @user.followed_projects do |followed_project|
   json.founder_name followed_project.founder_name
   json.title followed_project.title
   json.medium_url followed_project.project_photo.url(:medium)
+  json.big_url followed_project.project_photo.url(:big)
 end

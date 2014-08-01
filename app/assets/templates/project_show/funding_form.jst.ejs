@@ -1,18 +1,25 @@
+<br>
 <form id="funding-form" form="role">
   <div class="form-group">
-    <span class="currency">$</span>
     <input type="hidden"
            name="project_funding[project_id]"
-           value="<%=project.escape('id')%>">
+           value="<%=project.escape('id')%>"
+           class="form-control">
+
     <input type="hidden"
            name="project_funding[project_title]"
            value="<%=project.escape('title')%>">
+    <div class="col-xs-5">
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
     <input type="number"
            name="project_fund[fund]"
            class="form-control"
            min="1",
            step="1">
-  </div>
+    </div>
+    </div>
 
-  <input type="submit" name="Fund Brand">
+  <input type="submit" name="Fund Brand" class="btn btn-success btn-sm">
+
 </form>
