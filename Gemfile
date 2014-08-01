@@ -31,3 +31,7 @@ group :development do
   gem 'bullet'
   gem 'lol_dba'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
