@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730225506) do
+ActiveRecord::Schema.define(version: 20140801164141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140730225506) do
   end
 
   add_index "project_followings", ["follower_id"], name: "index_project_followings_on_follower_id", using: :btree
+  add_index "project_followings", ["project_id", "follower_id"], name: "index_project_followings_on_project_id_and_follower_id", using: :btree
   add_index "project_followings", ["project_id"], name: "index_project_followings_on_project_id", using: :btree
 
   create_table "project_fundings", force: true do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140730225506) do
   end
 
   add_index "project_fundings", ["funder_id"], name: "index_project_fundings_on_funder_id", using: :btree
+  add_index "project_fundings", ["project_id", "funder_id"], name: "index_project_fundings_on_project_id_and_funder_id", using: :btree
   add_index "project_fundings", ["project_id"], name: "index_project_fundings_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|

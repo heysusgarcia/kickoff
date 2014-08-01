@@ -1,0 +1,39 @@
+<h3>Staff Picks:Casual</h3>
+<div class="card">
+  <div class="row">
+    <div class="col-md-6 photo">
+      <a href="<%=project.url()%>">
+        <img src="<%=project.escape('medium_url')%>">
+      </a>
+    </div>
+    <div class="col-md-6 body">
+      <h4>
+        <a href="<%=project.url()%>"><%=project.escape('title')%></a>
+      </h4>
+      <p class="desc"><%=project.escape('description')%></p>
+      <div class="progress">
+        <div class="progress-bar"
+             role="progressbar"
+             aria-valuenow="60"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             style="width: <%=project.percentFunded()%>">
+        </div>
+      <div class="row">
+        <div class="col-md-3">
+          <%=project.percentFunded()%>%
+          <p class="grey-dark">funded</p>
+        </div>
+        <div class="col-md-3">
+          $<%=project.escape('amountRaised')%>
+          <p class="grey-dark">pledged</p>
+        </div>
+
+        <div class="col-md-3">
+          <%=project.daysLeft()%>
+          <p class="grey-dark">days to go</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

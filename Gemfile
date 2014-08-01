@@ -16,6 +16,9 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'pusher'
 gem 'paperclip'
+gem 'lol_dba'
+gem 'bullet'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
