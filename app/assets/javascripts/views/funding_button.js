@@ -4,7 +4,9 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
     JST['project_show/funding_form']({
       project: this.model
     }):
-    JST['project_show/funding_button']();
+    JST['project_show/funding_button']({
+      project: this.model
+    })
   },
 
   initialize: function() {

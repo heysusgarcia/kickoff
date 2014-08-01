@@ -1,4 +1,5 @@
 <% if (signedIn && !project.currentUserIsAFollower && !(currentUserId === project.escape('founder_id'))) { %>
+  <form id="follow-form">
     <input type="hidden"
            name="project_following[project_id]"
            value="<%=project.escape('id')%>">
@@ -10,10 +11,3 @@
     </span>
   </form>
 <% } %>
-
-
-
-// <form id="following-form" form="role">
-//   <button class="btn btn-default follow">
-//     <span class="glyphicon glyphicon-star"></span>Follow
-//   </button>

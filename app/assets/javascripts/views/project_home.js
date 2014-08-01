@@ -13,7 +13,10 @@ ShoeApp.Views.ProjectHome = Backbone.View.extend({
       project: this.model
     });
     this.$el.html(renderedContent);
-    debugger
+    var followButtonView = new ShoeApp.Views.FollowButton({
+      model: this.model
+    });
+    this.$('.follow').html(followButtonView.render().$el);
     return this;
   }
 });

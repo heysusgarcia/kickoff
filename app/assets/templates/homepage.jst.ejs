@@ -9,7 +9,7 @@
               <div class="card">
                 <div class="row">
                   <div class="col-md-6 photo">
-                    <a href="project/show">
+                    <a href="">
                       <img src="project/image">
                     </a>
                   </div>
@@ -112,9 +112,9 @@
   <% projects.each(function(project) { %>
 
 
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-7 col-md-3">
       <div class="thumbnail">
-        <img data-src="project.project_photo.url(:medium)" alt="<%=project.escape('title')%>">
+        <img data-src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
         <div class="caption">
           <h3><%= project.escape('title')%></h3>
           <h6><%= project.escape('founder_name')%></h6>

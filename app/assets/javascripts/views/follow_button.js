@@ -1,5 +1,5 @@
 ShoeApp.Views.FollowButton = Backbone.View.extend({
-  template: JST['follow_button'],
+  template: JST['project_show/follow_button'],
 
   events: {
     "submit form" : "followProject"
@@ -9,6 +9,8 @@ ShoeApp.Views.FollowButton = Backbone.View.extend({
     var renderedContent = this.template({
       project: this.model
     });
+    this.$el.html(renderedContent);
+    return this;
   },
 
   followProject: function(event) {
@@ -18,9 +20,7 @@ ShoeApp.Views.FollowButton = Backbone.View.extend({
     var view = this;
     var user = new ShoeApp.Models.User({id: currentUserId});
     user.fetch();
-    var projectFollowing = new ShoeApp.Models.ProjectFollowing({
-      params
-    });
+    var projectFollowing = new ShoeApp.Models.ProjectFollowing(params);
     this.projectFollowing.save({}, { success: function() {
       view.model.followers().add(user);
       user.followedProjects().add(view.model);

@@ -1,4 +1,4 @@
-<% if (project.escape('founder_id') === currentUserId) {%>
+<% if (signedIn && project.escape('founder_id') === currentUserId) {%>
   <form id="new-update-form" form="role">
     <div class="form-group">
       <label for="body">Leave your update</label>

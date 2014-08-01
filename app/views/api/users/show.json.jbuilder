@@ -1,13 +1,13 @@
 json.extract! @user, :id, :name, :location, :biography, :website, :created_at
-json.medium_url @user.profile_photo.url(:small)
-json.medium_url @user.profile_photo.url(:medium)
+json.small_url @user.profile_photo(:small)
+json.medium_url @user.profile_photo(:medium)
 
 json.backed_projects @user.backed_projects do |backed_project|
   json.id backed_project.id
   json.founder_name backed_project.founder_name
   json.title backed_project.title
   json.category backed_project.category
-  json.project_photo_url backed_project.project_photo.url(:medium)
+  json.medium_url backed_project.project_photo.url(:medium)
 end
 
 json.started_projects @user.started_projects do |started_project|

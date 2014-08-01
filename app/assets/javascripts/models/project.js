@@ -48,29 +48,35 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   },
 
   currentUserIsAFunder: function () {
-    var isFunder = this.funders().findWhere({id: currentUserId });
-    if (isFunder) {
-      return true;
-    } else {
-      return false;
+    if (signedIn) {
+      var isFunder = this.funders().findWhere({id: currentUserId });
+      if (isFunder) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
 
   currentUserIsABacker: function() {
-    var isBacker = this.funders().findWhere({id: currentUserId });
-    if (isBacker) {
-      return true;
-    } else {
-      return false;
+    if (signedIn) {
+      var isBacker = this.funders().findWhere({id: currentUserId });
+      if (isBacker) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
 
   currentUserIsAFollower: function() {
-    var isFollower = this.followers().findWhere({id: currentUserId });
-    if (isFollower) {
-      return true;
-    } else {
-      return false;
+    if (signedIn) {
+      var isFollower = this.followers().findWhere({id: currentUserId });
+      if (isFollower) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
 
