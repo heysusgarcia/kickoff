@@ -33,22 +33,20 @@ ActiveRecord::Base.transaction do
   #             biography:, website:, profile_photo: seed_image())
 
 
-  Project.create(founder_id: 1, title: "Android Homme", description: "Android, adj. possessing of human features,
-                 an automaton that is created from biological materials and resembles a human. Also called a humanoid.
-                 The interstellar collisions of street and lux design have birthed Android Homme. Android Homme
+  Project.create(founder_id: 1, title: "Android Homme", description: "The interstellar collisions of street and lux design. Android Homme
                  takes your basic high or low top and adds a trademark spaceman aesthetic to them, along with premium
-                 leather and suede, durable gum rubber soles.", funding_goal: 30000, duration: 45, category: "fashion",
+                 leather and suede, durable gum rubber soles.", funding_goal: 30_000, duration: 45, category: "fashion",
                  founder_name: "Javier Laval", project_photo: seed_image("androidhomme_project.jpg"))
-  Project.create(founder_id: 2, title: "Clae", description: "description description description", funding_goal: 50000, duration: 30, category: "casual",
+  Project.create(founder_id: 2, title: "Clae", description: "description description description", funding_goal: 50_000, duration: 30, category: "casual",
                  founder_name: "Name Name", project_photo: seed_image("clae_project.jpg"))
   Project.create(founder_id: 3, title: "Clear Weather", description: "Our mission is to bring true design and craftmanship to the masses. Unique, vintge
   inspired products with a futuristic feel. A brand that reflects us as we grow and expand as individuals. Premium products at an
-  accessible price.", funding_goal: 50000, duration: 35, category: "",
+  accessible price.", funding_goal: 50_000, duration: 35, category: "",
                  founder_name: "Name Name", project_photo: seed_image("clae_project.jpg"))
-  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "Description Description", funding_goal: 20000, duration: 20, category: "casual",
+  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "Description Description", funding_goal: 20_000, duration: 20, category: "casual",
                  founder_name: "Jeff Lee", project_photo: seed_image("jpcustomkicks_project.jpg"))
 end
 
 
-# create a folder/directory in db, add images, then commit to git.
-# use file.open and everything should be good since images will be comitted to git
+# Android, adj. possessing of human features,
+#                an automaton that is created from biological materials and resembles a human. Also called a humanoid.

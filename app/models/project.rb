@@ -27,8 +27,8 @@ class Project < ActiveRecord::Base
   has_attached_file :project_photos
 
   has_attached_file :project_photo, :styles => {
-    :big => "600x600>",
-    :medium => "300x300>",
+    :big => "640x480>",
+    :medium => "197x150>",
     :small => "50x50#"
   }
   validates_attachment_content_type(

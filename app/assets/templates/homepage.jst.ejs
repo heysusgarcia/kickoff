@@ -112,13 +112,15 @@
   <% projects.each(function(project) { %>
 
 
-    <div class="col-sm-7 col-md-3">
+    <div class="col-sm-7 col-md-3 project-card">
       <div class="thumbnail">
-        <img data-src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
+        <a href="#/projects/<%=project.escape('id')%>">
+          <img src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
+        </a>
         <div class="caption">
-          <h3><%= project.escape('title')%></h3>
-          <h6><%= project.escape('founder_name')%></h6>
-          <p><%= project.escape('description')%></p>
+          <h3 class="project-title"><%= project.escape('title')%></h3>
+          <h6 class="founder-name grey-dark">by <%= project.escape('founder_name')%></h6>
+          <p class="project-description grey-dark"><%=project.escape('description')%></p>
 
           <div class="progress">
             <div class="progress-bar"
@@ -126,23 +128,23 @@
                  aria-valuenow="60"
                  aria-valuemin="0"
                  aria-valuemax="100"
-                 style="width: <%=project.percentFunded%>;">
+                 style="width: <%=project.percentFunded()%>">
             </div>
           </div>
-          <ul class="no-margin">
+          <ul class="no-margin project-stats list no-margin h6 no-wrap">
             <li class="inline-block">
               <strong class="block h6"><%= project.percentFunded() %></strong>
-              <span class="grey">funded</span>
+              <span class="grey-dark">funded</span>
             </li>
 
             <li class="inline-block">
               <strong class="block h6"><%= project.escape('amount_raised') %></strong>
-              <span class="grey">pledged</span>
+              <span class="grey-dark">pledged</span>
             </li>
 
             <li class="inline-block">
               <strong class="block h6"><%=project.daysLeft()%></strong>
-              <span class="grey">days to go</span>
+              <span class="grey-dark">days to go</span>
             </li>
 
           </ul>

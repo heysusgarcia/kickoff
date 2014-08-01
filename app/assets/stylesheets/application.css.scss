@@ -17,6 +17,12 @@
  @import "bootstrap";
  @import "font-awesome";
 
+#main.container {
+  height: 100%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
 .navbar-default {
   background-color: white;
   height: 60px;
@@ -40,6 +46,7 @@ div.center-block {
 }
 .project-stats {
   line-height: 1.25em;
+  font-size: 12px;
 }
 .no-margin {
   margin: 0;
@@ -88,7 +95,7 @@ a.image {
   list-style: none;
   border-left: 1px solid #828587;
   width: 100%;
-  font-size: 100%;
+  // font-size: 100%;
   height: 245px;
 }
 ul.staff-picks-nav {
@@ -96,9 +103,6 @@ ul.staff-picks-nav {
   float: none;
   padding-top: 20%;
 }
-// ul.staff-picks-nav a:hover {
-//   border-left: 1px solid;
-// }
 ul.staff-picks-nav a:active {
   border-left: 1px solid;
 }
@@ -106,6 +110,8 @@ ul.staff-picks-nav a:active {
   padding-left: 0;
   padding-right: 0;
   margin-right: 0;
+  font: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 .center {
   text-align: center;
@@ -113,9 +119,31 @@ ul.staff-picks-nav a:active {
 .project-show-info {
   height: 100%;
 }
-#main.container {
-  height: 100%;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+.project-card {
+  min-height: 217px;
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+div.thumbnail {
+  height: 500px;
+  width: 220px;
+}
+.project-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.project-description {
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+}
+.founder-name {
+  font-size: 12px;
+  margin-top: 0px
+}
+.progress {
+  height: 10px;
 }
