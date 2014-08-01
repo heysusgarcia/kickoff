@@ -16,8 +16,6 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'pusher'
 gem 'paperclip'
-gem 'lol_dba'
-gem 'bullet'
 gem 'thin'
 
 group :doc do
@@ -30,4 +28,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'debugger'
+  gem 'bullet'
+  gem 'lol_dba'
 end

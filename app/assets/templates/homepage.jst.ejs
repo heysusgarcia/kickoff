@@ -4,8 +4,8 @@
       <div class="col-md-8">
         <div class="tab-content staff-picks">
 
-          <div class="tab-pane fade active in" id="casual-design">
-            <h3>Staff Picks:Casual</h3>
+          <div class="tab-pane fade active in" id="fashion-design">
+            <h3>Staff Picks:Fashion</h3>
 
               <div class="card">
                 <div class="row">
@@ -16,13 +16,11 @@
                   </div>
                   <div class="col-md-6 body">
                     <h4>
-                      <a href="p">Project Name</a>
+                      <a href="p">Android Homme</a>
                     </h4>
-                    <p class="desc">Summary of project</p>
-                    <p>
-                      <span class="glyphicon glyphicon-marker"></span>
-                      <span class="preview-location">City, ST</span>
-                    </p>
+                    <p class="desc">The interstellar collisions of street and lux design. Android Homme
+                                   takes your basic high or low top and adds a trademark spaceman aesthetic to them, along with premium
+                                   leather and suede, durable gum rubber soles.</p>
                     <div class="divider">
                       <div class="progress-bar" style="width: 0%">
                       </div>
@@ -48,24 +46,22 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="fashion-design">
-            <h3>Staff Picks:Fashion</h3>
+          <div class="tab-pane fade" id="casual-design">
+            <h3>Staff Picks:Casual</h3>
             <div class="card">
               <div class="row">
                 <div class="col-md-6 photo">
-                  <a href="">
-                    <img src="project/image">
+                  <a href="#/projects/2">
+                    <img src="/project/image" height="240px" width="320px">
                   </a>
                 </div>
                 <div class="col-md-6 body">
                   <h4>
-                    <a href="p">Project Name</a>
+                    <a href="p">Clae</a>
                   </h4>
-                  <p class="desc">Summary of project</p>
-                  <p>
-                    <span class="glyphicon glyphicon-marker"></span>
-                    <span class="preview-location">City, ST</span>
-                  </p>
+                  <p class="desc">A distinct collection of smart essentials fit for the modern man.
+                                 Taking extra steps by using premium leathers and materials, and emphasizing uncommon comfort and versatility,
+                                 CLAE creates footwear that evolves and endures.</p>
                   <div class="divider">
                     <div class="progress-bar" style="width: 0%">
                     </div>
@@ -95,27 +91,90 @@
           <div class="tab-pane fade" id="basketball-design">
             <h3>Staff Picks:Basketball</h3>
             <div class="card">
+              <div class="row">
+                <div class="col-md-6 photo">
+                  <a href="#/projects/8">
+                    <img src="/project/image" height="240px" width="320px">
+                  </a>
+                </div>
+                <div class="col-md-6 body">
+                  <h4>
+                    <a href="p">Kicksters</a>
+                  </h4>
+                  <p class="desc">Summary of project</p>
+                  <div class="divider">
+                    <div class="progress-bar" style="width: 0%">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      %
+                      <p class="grey-dark">funded</p>
+                    </div>
+                    <div class="col-md-3">
+                      $
+                      <p class="grey-dark">raised</p>
+                    </div>
+
+                    <div class="col-md-3">
+                      x
+                      <p class="grey-dark">days to go</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
-          <div class="tab-pane fade" id="skateboarding-design">
+          <!-- <div class="tab-pane fade" id="skateboarding-design">
             <h3>Staff Picks:Skateboarding</h3>
             <div class="card">
 
             </div>
-          </div>
+          </div> -->
           <div class="tab-pane fade" id="baseball-design">
             <h3>Staff Picks:Baseball</h3>
             <div class="card">
+              <div class="row">
+                <div class="col-md-6 photo">
+                  <a href="#/projects/7">
+                    <img src="/project/image" height="240px" width="320px">
+                  </a>
+                </div>
+                <div class="col-md-6 body">
+                  <h4>
+                    <a href="p">Shanes</a>
+                  </h4>
+                  <p class="desc">Summary of project</p>
+                  <div class="divider">
+                    <div class="progress-bar" style="width: 0%">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      %
+                      <p class="grey-dark">funded</p>
+                    </div>
+                    <div class="col-md-3">
+                      $
+                      <p class="grey-dark">raised</p>
+                    </div>
 
+                    <div class="col-md-3">
+                      x
+                      <p class="grey-dark">days to go</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="tab-pane fade" id="football-design">
+          <!-- <div class="tab-pane fade" id="football-design">
             <h3>Staff Picks:Football</h3>
             <div class="card">
 
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -136,21 +195,21 @@
             Basketball
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#skateboarding-design" data-toggle="tab">
             Skateboarding
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="#baseball-design" data-toggle="tab">
             Baseball
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#football-design" data-toggle="tab">
             Football
           </a>
-        </li>
+        </li> -->
         </ul>
       </div>
     </div>
@@ -169,7 +228,6 @@
         </a>
         <div class="caption" style="padding:0px">
           <h3 class="project-title"><%= project.escape('title')%></h3>
-          <h6 class="founder-name grey-dark">by <%= project.escape('founder_name')%></h6>
           <p class="project-description grey-dark"><%=project.escape('description')%></p>
         </div>
 
