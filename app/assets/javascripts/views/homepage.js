@@ -5,7 +5,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
   },
 
-  className: 'container',
+  className: 'container full-width',
   //
   // events: {
   //   "click a#fashion-design" : "showFashionPick",
