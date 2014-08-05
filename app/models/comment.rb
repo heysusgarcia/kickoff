@@ -10,7 +10,7 @@
 #
 
 class Comment < ActiveRecord::Base
-  validates :project_id, :backer_id, :body, presence: true
+  validates :project_id, :body, presence: true
 
   belongs_to :project
 end

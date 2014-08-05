@@ -3,7 +3,7 @@ module Api
     before_action :restrict_commenting, only: [:create]
 
     def create
-      @project = Project.find(params[:id])
+      @project = Project.find(params[:project_id])
       @comment = @project.comments.new(comment_params)
       if @comment.save
         render json: @comment
@@ -18,7 +18,7 @@ module Api
     end
 
     def restrict_commenting
-      @project = Project.find(params[:id])
+      @project = Project.find(params[:project_id])
       if !@project.is_backer?(current_user)
         redirect_to api_project_url(@project)
       end

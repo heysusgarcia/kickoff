@@ -4,13 +4,14 @@ ShoeApp.Views.ProjectCommentShow = Backbone.View.extend({
   tagName: 'li',
   className: 'backer-comment',
 
-  initialize: function() {
+  initialize: function(options) {
+    this.project = options.project;
     this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function() {
-    var backer = this.model.backers.findWhere({
-      id: current_user.id
+    var backer = this.project.funders().findWhere({
+      id: currentUserId
     });
     var renderedContent = this.template({
       comment: this.model,

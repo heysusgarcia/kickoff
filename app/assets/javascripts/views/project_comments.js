@@ -17,7 +17,8 @@ ShoeApp.Views.ProjectComments = Backbone.CompositeView.extend({
 
   addComment: function(comment) {
     var commentShow = new ShoeApp.Views.ProjectCommentShow({
-      model: comment
+      model: comment,
+      project: this.model
     });
     this.addSubview(".backers-comments", commentShow);
   },

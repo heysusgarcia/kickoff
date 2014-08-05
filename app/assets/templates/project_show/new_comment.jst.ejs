@@ -5,6 +5,8 @@
       <textarea name="comment[body]" id="body" class="form-control"></textarea>
     </div>
 
+    <input type="hidden" name="comment[project_id]" value="<%= project.id %>">
+
     <input type="submit" value="Post Comment" class="btn btn-primary">
   </form>
 <% } else { %>
