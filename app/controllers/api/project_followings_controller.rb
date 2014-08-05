@@ -1,6 +1,7 @@
 module Api
   class ProjectFollowingsController < ApplicationController
     before_action :require_signed_in, only: [:create]
+    wrap_parameters :project_following, include: [:project_id, :project_title]
 
     def create
       @project_following = ProjectFollowing.new(project_followings_params)

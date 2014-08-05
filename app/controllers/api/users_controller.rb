@@ -3,7 +3,7 @@ module Api
     before_action :require_signed_in, only: [:show, :backed_projects,
       :started_projects, :followed_projects]
     before_action :restrict_profile_settings, only: [:update]
-    wrap_parameters :user, include: [:profile_photo]
+    wrap_parameters :user, include: [:profile_photo, :name, :biography, :location, :website]
 
 
     def show

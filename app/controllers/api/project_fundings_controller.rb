@@ -1,6 +1,7 @@
 module Api
   class ProjectFundingsController < ApplicationController
     before_action :require_signed_in, only: [:create]
+    wrap_parameters :project_funding, include: [:project_id, :project_title, :amount_funded]
 
     def create
       @project_funding = ProjectFunding.new(project_funding_params)

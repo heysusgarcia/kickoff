@@ -34,6 +34,7 @@ ShoeApp.Views.NewProject = Backbone.View.extend({
     var $form = this.$el.find('#new-project');
     var formData = $form.serializeJSON()['project'];
     var view = this;
+    debugger
     var newProject = new ShoeApp.Models.Project(formData);
     newProject.save({}, {
       success: function() {

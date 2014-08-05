@@ -1,7 +1,7 @@
 ShoeApp.Views.StaffPickBaseball = Backbone.View.extend({
   template: JST['homepage/baseball'],
 
-  className: 'tab-pane fade active in',
+  className: 'tab-pane fade',
   id: 'baseball-design',
 
   initialize: function() {

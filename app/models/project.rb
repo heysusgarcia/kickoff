@@ -56,6 +56,6 @@ class Project < ActiveRecord::Base
   private
 
   def funding_goal_min_1_dollar
-    funding_goal >= 1
+    self.funding_goal >= 1
   end
 end

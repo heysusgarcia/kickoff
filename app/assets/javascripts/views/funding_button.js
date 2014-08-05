@@ -47,6 +47,7 @@ ShoeApp.Views.FundingButton = Backbone.View.extend({
     var newProjectFunding = new ShoeApp.Models.ProjectFunding();
     var amountRaised = this.model.get('amount_raised') + amountFunded;
     this.model.set('amount_raised', amountRaised);
+    debugger
     this.model.save({}, { success: function() {
       newProjectFunding.save(params);
       view.model.funders().add(user);

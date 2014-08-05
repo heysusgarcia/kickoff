@@ -1,7 +1,8 @@
 module Api
   class ProjectsController < ApplicationController
     before_action :require_signed_in, only: [:create]
-    wrap_parameters :project, include: [:project_photo]
+    wrap_parameters :project, include: [:project_photo, :title, :description, :funding_goal,
+                                        :category, :duration, :website]
 
     def create
       @project = Project.new(project_params)
@@ -26,7 +27,7 @@ module Api
     end
 
     def show
-      @project = Project.includes(:followings, :backings, :updates, :comments).find(params[:id])
+      @project = Project.includes(:updates, :comments).find(params[:id])
       render :show
     end
 
