@@ -1,6 +1,6 @@
-<div class="container container-fluid bg">
+<div class="container container-fluid full-width bg">
   <div class="row full-width mrlr">
-    <div class="col-xs-4 col-xs-offset-1 sign-ins">
+    <div class="col-xs-4 col-xs-offset-2 sign-ins form-border">
       <h2 class="sign-in-header">Sign up</h2>
       <form action="/users" method="post" form="role">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -29,7 +29,7 @@
                  placeholder="Password">
         </div>
 
-          <input type="submit" value="Sign up" class="btn btn-success mrtb">
+          <input type="submit" value="Sign up" class="btn btn-primary mrtb">
       </form>
     </div>
   </div>

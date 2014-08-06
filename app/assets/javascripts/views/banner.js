@@ -1,7 +1,7 @@
 ShoeApp.Views.Banner = Backbone.View.extend({
   template: JST['banner'],
 
-  className: 'container container-fluid',
+  className: 'banner full-width',
 
   render: function() {
     var renderedContent = this.template();

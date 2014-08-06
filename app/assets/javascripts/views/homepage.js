@@ -5,7 +5,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
   },
 
-  className: 'container full-width',
+  className: 'container full-width homepage-view',
   //
   // events: {
   //   "click a#fashion-design" : "showFashionPick",
@@ -22,6 +22,8 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
       projects: recentProjects
     });
     this.$el.html(renderedContent);
+    var banner = new ShoeApp.Views.Banner();
+    this.$('.banner-view').html(banner.render().$el);
     // this.showCasualPick();
     return this;
   },
