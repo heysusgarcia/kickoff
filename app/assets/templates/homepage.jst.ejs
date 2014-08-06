@@ -3,8 +3,8 @@
 
 
 <div class="staff-picks-index full-width">
-  <div class="container full-width">
-    <div class="row">
+  <div class="container">
+    <div class="row picks-index">
       <div class="col-md-8">
         <div class="tab-content staff-picks">
 
@@ -220,48 +220,49 @@
   </div>
 </div>
 
+<div class="container container-fluid full-width proj-parent">
+  <div class="row proj-cont">
+    <% projects.each(function(project) { %>
 
-<div class="row proj-cont">
-  <% projects.each(function(project) { %>
 
+      <div class="col-sm-7 col-md-3 project-card">
+        <div class="thumbnail">
+          <a href="#/projects/<%=project.escape('id')%>">
+            <img src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
+          </a>
+          <div class="caption" style="padding:0px">
+            <h3 class="project-title"><%= project.escape('title')%></h3>
+            <p class="project-description grey-dark"><%=project.escape('description')%></p>
+          </div>
 
-    <div class="col-sm-7 col-md-3 project-card">
-      <div class="thumbnail">
-        <a href="#/projects/<%=project.escape('id')%>">
-          <img src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
-        </a>
-        <div class="caption" style="padding:0px">
-          <h3 class="project-title"><%= project.escape('title')%></h3>
-          <p class="project-description grey-dark"><%=project.escape('description')%></p>
-        </div>
-
-            <div class="progress">
-              <div class="progress-bar"
-                   role="progressbar"
-                   aria-valuenow="60"
-                   aria-valuemin="0"
-                   aria-valuemax="100"
-                   style="width: <%=project.percentFunded()%>">
+              <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-valuenow="60"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     style="width: <%=project.percentFunded()%>">
+                </div>
               </div>
-            </div>
-            <ul class="no-margin project-stats list no-margin h6 no-wrap">
-              <li class="inline-block pl">
-                <strong class="block h6 no-margin pl"><%= project.percentFunded() %></strong>
-                <span class="grey-dark">funded</span>
-              </li>
+              <ul class="no-margin project-stats list no-margin h6 no-wrap">
+                <li class="inline-block pl">
+                  <strong class="block h6 no-margin pl"><%= project.percentFunded() %></strong>
+                  <span class="grey-dark">funded</span>
+                </li>
 
-              <li class="inline-block pl">
-                <strong class="block h6 stat no-margin">$<%= project.escape('amount_raised') %></strong>
-                <span class="grey-dark">pledged</span>
-              </li>
+                <li class="inline-block pl">
+                  <strong class="block h6 stat no-margin">$<%= project.escape('amount_raised') %></strong>
+                  <span class="grey-dark">pledged</span>
+                </li>
 
-              <li class="inline-block pl">
-                <strong class="block h6 no-margin"><%=project.daysLeft()%></strong>
-                <span class="grey-dark">days to go</span>
-              </li>
-            </ul>
+                <li class="inline-block pl">
+                  <strong class="block h6 no-margin"><%=project.daysLeft()%></strong>
+                  <span class="grey-dark">days to go</span>
+                </li>
+              </ul>
 
+        </div>
       </div>
-    </div>
-  <% }) %>
+    <% }) %>
+  </div>
 </div>

@@ -99,6 +99,7 @@ a.image {
   padding: 20px;
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 40px;
 }
 .staff-picks-nav {
   list-style: none;
@@ -216,11 +217,17 @@ div.thumbnail {
   padding-right: 0px;
 }
 .proj-cont {
-  margin-right: 0px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .banner-text {
   color: white;
   font-size: 30px;
   opacity: 0.75;
   float: right;
+}
+.proj-parent {
+  border-top: 1px solid #d9d9de;
+  padding-top: 40px;
 }
