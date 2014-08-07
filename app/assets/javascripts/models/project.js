@@ -29,16 +29,23 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     if (response.followers) {
       this.followers().set(response.followers, { parse: true });
       delete response.followers;
-    } else if (response.funders) {
+    }
+
+    if (response.funders) {
       this.funders().set(response.funders, { parse: true });
       delete response.funders;
-    } else if (response.updates) {
+    }
+
+    if (response.updates) {
       this.updates().set(response.updates, { parse: true });
       delete response.updates;
-    } else if (response.comments) {
+    }
+
+    if (response.comments) {
       this.comments().set(response.comments, { parse: true });
       delete response.comments;
     }
+    
     return response;
   },
 
