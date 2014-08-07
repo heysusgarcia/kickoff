@@ -10,4 +10,5 @@ end
 
 json.comments @project.comments do |comment|
   json.extract! comment, :id, :project_id, :body, :created_at
+  json.author comment.author
 end

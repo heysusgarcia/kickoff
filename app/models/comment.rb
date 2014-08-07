@@ -10,7 +10,12 @@
 #
 
 class Comment < ActiveRecord::Base
-  validates :project_id, :body, presence: true
+  validates :project_id, :body, :author_id, presence: true
 
   belongs_to :project
+
+  def author
+    user = User.find(self.author_id)
+    user.name
+  end
 end

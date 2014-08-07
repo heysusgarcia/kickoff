@@ -5,6 +5,7 @@ module Api
     def create
       @project = Project.find(params[:project_id])
       @comment = @project.comments.new(comment_params)
+      @comment.author_id = current_user.id
       if @comment.save
         render json: @comment
       else
