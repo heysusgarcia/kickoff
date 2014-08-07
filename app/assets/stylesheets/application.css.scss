@@ -128,6 +128,10 @@ ul.staff-picks-nav a:active {
 }
 .project-show-info {
   height: 100%;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 }
 .project-card {
   min-height: 217px;
@@ -136,14 +140,15 @@ ul.staff-picks-nav a:active {
   margin-right: 10px;
 }
 div.thumbnail {
-  height: 500px;
+  height: 475px;
   width: 220px;
   padding: 10px;
+  position: relative;
 }
 .project-title {
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   margin-top: 0px;
 }
 .project-description {
@@ -180,6 +185,7 @@ div.thumbnail {
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #d9d9de;
+  border-radius: 6px;
 }
 .sign-ins {
   margin-top: 25px;
@@ -241,5 +247,16 @@ div.photo {
   margin-right: 40px;
   width: 320px;
   height: 240px;
-
+}
+.thumbnail a > img {
+  width: 200px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.proj-display {
+  position: absolute;
+  bottom: 10px;
+}
+.project-show-info.nav {
+  margin-bottom: 5px;
 }

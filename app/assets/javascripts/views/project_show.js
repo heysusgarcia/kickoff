@@ -5,7 +5,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
   },
 
-  className: 'project-show-info full-width',
+  className: 'project-show-info',
 
   events: {
     "click a#home" : "showHome",

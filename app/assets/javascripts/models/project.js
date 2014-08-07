@@ -92,7 +92,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     var currYear = dateNow.getFullYear();
     var currMonth = dateNow.getMonth();
     var b = moment([currYear, currMonth, currDate]);
-    var daysSince = b.diff(a, 'days');
+    var daysSince = a.diff(b, 'days');
 
     if ( daysSince < this.escape('duration')) {
       return this.escape('duration') - daysSince;

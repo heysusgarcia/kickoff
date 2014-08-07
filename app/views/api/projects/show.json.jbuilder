@@ -1,5 +1,5 @@
 json.extract! @project, :id, :founder_id, :founder_name, :title, :description,
-                        :amount_raised, :duration, :website, :category, :created_at
+                        :amount_raised, :funding_goal, :duration, :website, :category, :created_at
 json.medium_url @project.project_photo(:medium)
 json.big_url @project.project_photo.url(:big)
 

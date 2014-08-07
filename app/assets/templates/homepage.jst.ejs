@@ -59,13 +59,14 @@
       <div class="col-sm-7 col-md-3 project-card">
         <div class="thumbnail">
           <a href="#/projects/<%=project.escape('id')%>">
-            <img src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>">
+            <img src="<%= project.escape('medium_url')%>" alt="<%=project.escape('title')%>" class="thumbnail-img">
           </a>
           <div class="caption" style="padding:0px">
             <h3 class="project-title"><%= project.escape('title')%></h3>
             <p class="project-description grey-dark"><%=project.escape('description')%></p>
           </div>
 
+          <div class="proj-display">
               <div class="progress">
                 <div class="progress-bar"
                      role="progressbar"
@@ -75,6 +76,7 @@
                      style="width: <%=project.percentFunded()%>">
                 </div>
               </div>
+
               <ul class="no-margin project-stats list no-margin h6 no-wrap">
                 <li class="inline-block pl">
                   <strong class="block h6 no-margin pl"><%= project.percentFunded() %></strong>
@@ -91,7 +93,7 @@
                   <span class="grey-dark">days to go</span>
                 </li>
               </ul>
-
+            </div>
         </div>
       </div>
     <% }) %>

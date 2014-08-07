@@ -18,20 +18,21 @@
              aria-valuemax="100"
              style="width: <%=project.percentFunded()%>">
         </div>
-      <div class="row">
-        <div class="col-md-3">
-          <%=project.percentFunded()%>
-          <p class="grey-dark">funded</p>
-        </div>
-        <div class="col-md-3">
-          $<%=project.escape('amountRaised')%>
-          <p class="grey-dark">pledged</p>
-        </div>
+      </div>
 
-        <div class="col-md-3">
-          <%=project.daysLeft()%>
-          <p class="grey-dark">days to go</p>
-        </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%=project.percentFunded()%>
+        <p class="grey-dark">funded</p>
+      </div>
+      <div class="col-md-3">
+        $<%=project.escape('amount_raised')%>
+        <p class="grey-dark">pledged</p>
+      </div>
+
+      <div class="col-md-3">
+        <%=project.daysLeft()%>
+        <p class="grey-dark">days to go</p>
       </div>
     </div>
   </div>
