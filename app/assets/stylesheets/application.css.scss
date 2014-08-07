@@ -100,6 +100,7 @@ a.image {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 40px;
+  padding-left: 16%;
 }
 .staff-picks-nav {
   list-style: none;
@@ -225,9 +226,20 @@ div.thumbnail {
   color: white;
   font-size: 30px;
   opacity: 0.75;
-  float: right;
+  position: absolute;
+  right: 20px;
 }
 .proj-parent {
   border-top: 1px solid #d9d9de;
   padding-top: 40px;
+}
+.staff-picked-img {
+  height: 240px;
+  width: 320px;
+}
+div.photo {
+  margin-right: 40px;
+  width: 320px;
+  height: 240px;
+
 }

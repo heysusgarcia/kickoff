@@ -4,10 +4,6 @@ ShoeApp.Views.StaffPickCasual = Backbone.View.extend({
   className: 'tab-pane fade active in',
   id: 'casual-design',
 
-  initialize: function() {
-    this.listenTo(this.model, 'sync', this.render);
-  },
-
   render: function() {
     var renderedContent = this.template({
       project: this.model
