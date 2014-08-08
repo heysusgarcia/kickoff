@@ -24,6 +24,7 @@
   border-top: 1px solid #d9d9de;
   padding-left: 0px;
   padding-right: 0px;
+  background-color: #f7fafa;
 }
 .navbar-default {
   background-color: white;
@@ -122,6 +123,7 @@ ul.staff-picks-nav a:active {
   margin-right: 0;
   font: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   -webkit-font-smoothing: antialiased;
+  min-height: 100%;
 }
 .center {
   text-align: center;
@@ -187,6 +189,7 @@ div.thumbnail {
   border: 1px solid #d9d9de;
   border-radius: 6px;
   padding: 20px;
+  background-color: white;
 }
 .sign-ins {
   margin-top: 25px;
@@ -273,8 +276,10 @@ div.photo {
 .project-show.nav {
   margin-bottom: 5px;
 }
-.project-show.nav-tabs > li.active > a {
+.project-show.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
   border: none;
+  background-color: none;
+  border-bottom-color: none;
 }
 .days-left-span {
   display: block;
@@ -292,4 +297,70 @@ div.photo {
 }
 .pull-right.trackers {
   width: 200px;
+}
+input.funding-form-button {
+  display: inline-block;
+}
+.h3.project-home-title {
+  font-size: 28px;
+}
+.project-story {
+  font-size: 16px;
+}
+#project-photo {
+  height: 250px;
+  width: 275px;
+  border: 1px solid #d9d9de;
+  border-radius: 4px;
+  padding: 10px;
+}
+.new-project-inputs {
+  padding-top: 20px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.new-proj-form-inputs {
+  margin-left: 15%;
+}
+.proj-preview {
+  padding-top: 7%;
+  padding-right: 35%;
+}
+.edit-profile-inputs {
+  padding-top: 20px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.edit-profile-form-inputs {
+  margin-left: 15%;
+}
+.profile-preview {
+  padding-top: 7%;
+  padding-right: 25%
+}
+#profile-photo {
+  height: 225px;
+  width: 250px;
+  border: 1px solid #d9d9de;
+  border-radius: 4px;
+  padding: 10px;
+}
+h3.new-project-header {
+  font-size: 35px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+h3.edit-profile-header {
+  font-size: 35px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
 }

@@ -30,7 +30,9 @@ class Project < ActiveRecord::Base
     :big => "640x480>",
     :medium => "240x320>",
     :small => "50x50#"
-  }
+  },
+  :default_url => "https://s3-us-west-2.amazonaws.com/miscrand/placeholder.jpg"
+  
   validates_attachment_content_type(
     :project_photo,
     :content_type => /\Aimage\/.*\Z/

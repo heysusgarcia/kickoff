@@ -1,9 +1,11 @@
-<div class="row">
-  <!-- <div class="col-md-3">
-    <img id="profile-photo" src="#">
-  </div> -->
+<div class="row edit-profile-inputs">
+  <h3 class="edit-profile-header">Settings</h3>
+  <div class="col-md-3 pull-right profile-preview">
+    <img id="profile-photo" src="<%=user.escape('medium_url')%>">
+  </div>
 
-  <div class="col-md-9">
+  <div class="col-md-5 edit-profile-form-inputs">
+    <div class="row">
     <form id= "edit-user-profile" role="form">
       <div class="form-group">
         <label for="photo"></label>
@@ -25,10 +27,8 @@
         <label for="bio">Biography</label>
         <textarea name="user[biography]" id="bio"
                   value="<%=user && user.escape('biography')%>"
-                  palceholder="We suggest a short bio"
-                  class="form-control">
-        </textarea><br>
-
+                  placeholder="We suggest a short bio"
+                  class="form-control"></textarea><br>
       </div>
 
       <div class="form-group">
@@ -42,8 +42,8 @@
       <div class="form-group">
         <label for="website">Website</label>
         <input type="text" name="user[website]" id="website"
-               palceholder="www.example.com" class="form-control"
-               value="<%=user && user.escape('website')%>"><br>
+               placeholder="www.example.com" class="form-control"
+               value="<%=user.escape('website')%>"><br>
 
       </div>
 
@@ -51,4 +51,5 @@
     </form>
 
   </div>
+</div>
 </div>

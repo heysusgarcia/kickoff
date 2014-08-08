@@ -1,7 +1,14 @@
 <h1 class="center" id="project-show-title"><%=project.escape("title")%></h1>
 <ul class="project-show nav nav-tabs" role="tablist">
   <li class="active"><a id="home" href="#home">Home</a></li>
-  <li><a id="updates" href="#updates">Updates</a></li>
+  <li>
+  <a id="updates" href="#updates">
+    Updates
+    <div class="counter">
+      <%=project.updates().length%>
+    </div>
+  </a>
+  </li>
   <li><a id="backers" href="#backers">Backers</a></li>
   <li><a id="comments" href="#comments">Comments</a></li>
 </ul>
@@ -19,7 +26,7 @@
       <span class="backers-span">backers</span>
       <h1 class="goal inline-block"><%=project.escape('amount_raised')%></h1>
       <span class="goal-span">pledged of $<%=project.escape("funding_goal")%> goal</span>
-      <h1 class="days-left inline-block"><%= project.daysLeft()%></h1>
+      <h1 class="days-leftt inline-block"><%= project.daysLeft()%></h1>
       <span class="days-left-span">days to go</span>
 
       <div id="funding-view">
