@@ -8,7 +8,7 @@
     <div class="row">
     <form id="new-project" form="role">
         <div class="form-group">
-          <label for="photo"></label>
+          <label for="photo">Upload Photo</label>
           <input type="file" name="project[project_file_path]" id="photo"
                  class="form-control image-input">
            <input
@@ -18,29 +18,29 @@
         </div>
 
         <div class="form-group">
-          <label for="title"></label>
+          <label for="title">Brand Name</label>
           <input type="text" name="project[title]" id="title"
-                 class="form-control" placeholder="Project Name">
+                 class="form-control" placeholder="Shoe Brand">
         </div>
 
         <div class="form-group">
-          <label for="description"></label>
+          <label for="description">Description</label>
           <textarea name="project[description]" id="description"
-                class="form-control" placeholder="Description"></textarea>
+                class="form-control" placeholder="Pitch your brand!"></textarea>
         </div>
 
 
         <div class="form-group">
-          <label for="funding-goal"></label>
+          <label for="funding-goal">Funding Goal</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
           <input type="text" name="project[funding_goal]" id="funding-goal"
-                class="form-control" placeholder="Funding Goal">
+                class="form-control" placeholder="1">
         </div>
         </div>
 
         <div class="form-group">
-          <label for="category"></label>
+          <label for="category">Category</label>
           <select name="project[category]" id="category"
                 class="form-control">
             <option value="casual">Casual</option>
@@ -54,9 +54,9 @@
         </div>
 
         <div class="form-group">
-          <label for="duration"></label>
+          <label for="duration">Duration</label>
           <input type="text" name="project[duration]" id="duration"
-                class="form-control" placeholder="Duration">
+                class="form-control" placeholder="days">
         </div>
 
           <input type="submit" value="Create" class="btn btn-primary">
