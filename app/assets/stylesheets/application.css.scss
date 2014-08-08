@@ -186,6 +186,7 @@ div.thumbnail {
   margin-right: auto;
   border: 1px solid #d9d9de;
   border-radius: 6px;
+  padding: 20px;
 }
 .sign-ins {
   margin-top: 25px;
@@ -262,4 +263,33 @@ div.photo {
 }
 .desc {
   min-height: 180px;
+}
+.pull-left {
+  padding: 0;
+}
+.project-show.nav-tabs {
+  border-bottom: none;
+}
+.project-show.nav {
+  margin-bottom: 5px;
+}
+.project-show.nav-tabs > li.active > a {
+  border: none;
+}
+.days-left-span {
+  display: block;
+  padding-bottom: 20px;
+}
+.project-show-photo.img {
+  height: 640px;
+  height: 480px;
+}
+.backers-span, .goal-span, .days-left-span {
+  display: block;
+}
+.project-details {
+  width: 200px;
+}
+.pull-right.trackers {
+  width: 200px;
 }

@@ -11,4 +11,5 @@ end
 json.comments @project.comments do |comment|
   json.extract! comment, :id, :project_id, :body, :created_at
   json.author comment.author
+  json.profile_pic comment.profile_pic
 end

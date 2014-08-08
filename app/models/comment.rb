@@ -18,4 +18,9 @@ class Comment < ActiveRecord::Base
     user = User.find(self.author_id)
     user.name
   end
+
+  def author_profile_pic
+    user = User.find(self.author_id)
+    user.profile_photo(:profile)
+  end
 end

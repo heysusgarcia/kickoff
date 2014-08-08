@@ -10,9 +10,6 @@ ShoeApp.Views.ProjectCommentShow = Backbone.View.extend({
   },
 
   render: function() {
-    var backer = this.project.funders().findWhere({
-      id: currentUserId
-    });
     var renderedContent = this.template({
       comment: this.model,
       backer: backer
@@ -20,5 +17,4 @@ ShoeApp.Views.ProjectCommentShow = Backbone.View.extend({
     this.$el.html(renderedContent);
     return this;
   }
-
 });

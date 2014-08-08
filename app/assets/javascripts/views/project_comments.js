@@ -11,7 +11,7 @@ ShoeApp.Views.ProjectComments = Backbone.CompositeView.extend({
     var newCommentView = new ShoeApp.Views.NewComment({
       model: this.model
     });
-    this.addSubview('.new-comment-form', newCommentView);
+    this.prependSubview('.new-comment-form', newCommentView);
     this.model.comments().each(this.addComment.bind(this));
   },
 
@@ -20,13 +20,13 @@ ShoeApp.Views.ProjectComments = Backbone.CompositeView.extend({
       model: comment,
       project: this.model
     });
-    this.addSubview(".backers-comments", commentShow);
+    this.addSubviewReverse(".backers-comments", commentShow);
   },
 
   render: function() {
     var renderedContent = this.template();
     this.$el.html(renderedContent);
-    this.attachSubviews();
+    this.prependSubviews();
     return this;
   }
 });
