@@ -1,28 +1,16 @@
-== README
+Kickoff
+=======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Kickoff][www.kickoff.pw] Link
 
-Things you may want to cover:
+- A kickstarter clone dedicated to all things shoes.
+- Built using Ruby on Rails and Backbone.js
+- Includes User Authentication, ability to upload profile and project images via Paperclip. Used Rails and AWS to store images. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features to work on/implement (Still under construction)
+- Ability to edit a project
+- Finish project show page (fund a project, backers view, comments, updates)
+- Ability to follow a project
+- Finish user profile
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
