@@ -50,7 +50,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
   },
 
   percentFunded: function() {
-    var percent = 100 * (Math.round(this.escape("amount_raised") / this.escape("funding_goal")));
+    var percent = 100 * (parseInt(this.escape("amount_raised")) / parseInt(this.escape("funding_goal")));
     return String(Math.round(percent)) + "%";
   },
 
