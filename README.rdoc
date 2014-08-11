@@ -1,13 +1,13 @@
 Kickoff
 =======
 
-[Kickoff](www.kickoff.pw) Link
+[Kickoff][www.kickoff.pw] Link
 
 - A kickstarter clone dedicated to all things shoes.
 - Built using Ruby on Rails and Backbone.js
 - Includes User Athentication, ability to upload profile and project images via Paperclip. Used Rails and AWS to store images. 
 
-Features to work on/implement
+###Features to work on/implement
 - Ability to edit a project
 - Finish project show page
 - Ability to follow a project
