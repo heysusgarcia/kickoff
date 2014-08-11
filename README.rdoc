@@ -7,9 +7,9 @@ Kickoff
 - Built using Ruby on Rails and Backbone.js
 - Includes User Authentication, ability to upload profile and project images via Paperclip. Used Rails and AWS to store images. 
 
-Features to work on/implement
+Features to work on/implement (Still under construction)
 - Ability to edit a project
-- Finish project show page
+- Finish project show page (fund a project, backers view, comments, updates)
 - Ability to follow a project
 - Finish user profile
 
