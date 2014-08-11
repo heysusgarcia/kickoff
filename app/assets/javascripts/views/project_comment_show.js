@@ -7,6 +7,7 @@ ShoeApp.Views.ProjectCommentShow = Backbone.View.extend({
   initialize: function(options) {
     this.project = options.project;
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.project.comments(), 'sync', this.render);
   },
 
   render: function() {

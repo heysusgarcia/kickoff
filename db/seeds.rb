@@ -57,7 +57,7 @@ ActiveRecord::Base.transaction do
                  inspired products with a futuristic feel. A brand that reflects us as we grow and expand as individuals. Premium products at an
                  accessible price.", funding_goal: 65000, duration: 35, category: "casual",
                  founder_name: "Brubaker Brothers", project_photo: seed_image("clearweather_project.jpg"))
-  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "Description Description", funding_goal: 20000, duration: 20, category: "casual",
+  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "", funding_goal: 20000, duration: 20, category: "casual",
                  founder_name: "Jeff Lee", project_photo: seed_image("jpcustomkicks_project.jpg"))
   Project.create(founder_id: 5, title: "Swims", description: "I searched for the right product before I finally took matters in my own hands and decided to
                  develop SWIMS - The Modern Galosh! A stylish solution, embodying the essence of practicality: Wear your favorite shoes, slip on SWIMS
@@ -70,23 +70,10 @@ ActiveRecord::Base.transaction do
                  founder_name: "Damian Van Zyll De Jong", project_photo: seed_image("native_project.jpg"))
   Project.create(founder_id: 7, title: "Shanes", description: "Our mission is to bring baseball cleats to the masses that are functional and look great.",
                  funding_goal: 20000, duration: 20, category: "baseball", founder_name: "John Doe", project_photo: seed_image("baseball_project.jpg"))
-  Project.create(founder_id: 8, title: "Kicksters", description: "I searced for the right material to develop stylish, yet functional,
+  Project.create(founder_id: 8, title: "Kicksters", description: "I searched for the right material to develop stylish, yet functional,
                  basketball shoes. Our shoes are breathable and comfortable.", funding_goal: 20000, duration: 20, category: "basektball",
                  founder_name: "Dameon", project_photo: seed_image("basketball_project.jpg"))
   Project.create(founder_id: 9, title: "Lasco", description: "We wanted to develop product that is made entirely in the USA. We have carefully taken the time to insure that
                  every piece that goes into our footwear is 100% USA Made.", funding_goal: 20000, duration: 20, category: "fashion",
                  founder_name: "Gabriel", project_photo: seed_image("lasco_project.jpg"))
-
-
-# # UPDATES
-#   Update.create
-#
-# # PROJECT FUNDINGS
-#   ProjectFunding.create
-#
-# # PROJECT FOLLOWINGS
-#   ProjectFollowing.create
-#
-# #COMMENTS
-#   Comment.create
 end

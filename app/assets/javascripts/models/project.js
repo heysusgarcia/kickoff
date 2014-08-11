@@ -45,7 +45,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
       this.comments().set(response.comments, { parse: true });
       delete response.comments;
     }
-    
+
     return response;
   },
 
@@ -99,7 +99,7 @@ ShoeApp.Models.Project = Backbone.Model.extend({
     var currYear = dateNow.getFullYear();
     var currMonth = dateNow.getMonth();
     var b = moment([currYear, currMonth, currDate]);
-    var daysSince = a.diff(b, 'days');
+    var daysSince = b.diff(a, 'days');
 
     if ( daysSince < this.escape('duration')) {
       return this.escape('duration') - daysSince;

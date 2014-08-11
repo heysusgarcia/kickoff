@@ -24,13 +24,13 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
     });
     this.$el.html(renderedContent);
     var banner = new ShoeApp.Views.Banner();
-    // this.showCasualPick();
     this.$('.banner-view').html(banner.render().$el);
+    // this.showCasualPick();
     return this;
   },
 
   showFashionPick: function() {
-    var fashionProject = ShoeApp.projects.get(1);
+    var fashionProject = this.collection.get(1);
     var fashionPickView = new ShoeApp.Views.StaffPickFashion({
       model: fashionProject
     });
@@ -38,7 +38,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
   },
 
   showCasualPick: function() {
-    var casualProject = ShoeApp.projects.get(2);
+    var casualProject = this.collection.get(2);
     var casualPickView = new ShoeApp.Views.StaffPickCasual({
       model: casualProject
     });
@@ -46,7 +46,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
   },
 
   showBasketballPick: function() {
-    var basketballProject = ShoeApp.projects.get(3);
+    var basketballProject = this.collection.get(3);
     var basketballPickView = new ShoeApp.Views.StaffPickCasual({
       model: basketballProject
     });
@@ -54,7 +54,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
   },
 
   showSkateboardingPick: function() {
-    var skateboardingProject = ShoeApp.projects.get(4);
+    var skateboardingProject = this.collection.get(4);
     var skateboardingPickView = new ShoeApp.Views.StaffPickCasual({
       model: skateboardingProject
     });
@@ -62,7 +62,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
   },
 
   showBaseballPick: function() {
-    var baseballProject = ShoeApp.projects.get(5);
+    var baseballProject = this.collection.get(5);
     var baseballPickView = new ShoeApp.Views.StaffPickCasual({
       model: baseballProject
     });
@@ -70,7 +70,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
   },
 
   showFootballPick: function() {
-    var footballProject = ShoeApp.projects.get(6);
+    var footballProject = this.collection.get(6);
     var footballPickView = new ShoeApp.Views.StaffPickCasual({
       model: footballProject
     });

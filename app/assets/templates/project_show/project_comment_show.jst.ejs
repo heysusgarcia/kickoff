@@ -7,7 +7,7 @@
   <div class="col-md-10">
     <p class="backer-name">
       <%= comment.escape("author")%>
-      <span class="commenttime grey-dark">some time ago</span>
+      <span class="commenttime grey-dark"><%=new Date()%></span>
     </p>
     <p><%= comment.escape("body") %></p>
   </div>
