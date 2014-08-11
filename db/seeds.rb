@@ -47,22 +47,22 @@ ActiveRecord::Base.transaction do
 # PROJECTS
   Project.create(founder_id: 1, title: "Android Homme", description: "The interstellar collisions of street and lux design. Android Homme
                  takes your basic high or low top and adds a trademark spaceman aesthetic to them, along with premium
-                 leather and suede, durable gum rubber soles.", funding_goal: 30000, duration: 45, category: "fashion",
-                 founder_name: "Javier Laval", project_photo: seed_image("androidhomme_project.jpg"))
+                 leather and suede, durable gum rubber soles.", funding_goal: 30000, duration: 17, category: "fashion",
+                 founder_name: "Javier Laval", project_photo: seed_image("androidhomme_project.jpg"), amount_raised: 14500)
   Project.create(founder_id: 2, title: "Clae", description: "A distinct collection of smart essentials fit for the modern man.
                  Taking extra steps by using premium leathers and materials, and emphasizing uncommon comfort and versatility,
-                 CLAE creates footwear that evolves and endures.", funding_goal: 50000, duration: 30, category: "casual",
+                 CLAE creates footwear that evolves and endures.", funding_goal: 50000, duration: 24, category: "casual",
                  founder_name: "Sung Choi", project_photo: seed_image("clae_project.jpg"))
   Project.create(founder_id: 3, title: "Clear Weather", description: "Our mission is to bring true design and craftmanship to the masses. Unique, vintge
                  inspired products with a futuristic feel. A brand that reflects us as we grow and expand as individuals. Premium products at an
-                 accessible price.", funding_goal: 65000, duration: 35, category: "casual",
-                 founder_name: "Brubaker Brothers", project_photo: seed_image("clearweather_project.jpg"))
-  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "", funding_goal: 20000, duration: 20, category: "casual",
-                 founder_name: "Jeff Lee", project_photo: seed_image("jpcustomkicks_project.jpg"))
+                 accessible price.", funding_goal: 65000, duration: 20, category: "casual",
+                 founder_name: "Brubaker Brothers", project_photo: seed_image("clearweather_project.jpg"), amount_raised: 25000)
+  Project.create(founder_id: 4, title: "JP Custom Kicks", description: "", funding_goal: 20000, duration: 10, category: "casual",
+                 founder_name: "Jeff Lee", project_photo: seed_image("jpcustomkicks_project.jpg"), amount_raised: 1111)
   Project.create(founder_id: 5, title: "Swims", description: "I searched for the right product before I finally took matters in my own hands and decided to
                  develop SWIMS - The Modern Galosh! A stylish solution, embodying the essence of practicality: Wear your favorite shoes, slip on SWIMS
                  when the weather is rough, slip'em off when you arrive at your destination. Enhanced comfort is assured and your shoes are guaranteed to stay shiny.",
-                 funding_goal: 35000, duration: 30, category: "casual",
+                 funding_goal: 35000, duration: 26, category: "casual",
                  founder_name: "John R", project_photo: seed_image("swims_project.jpg"))
   Project.create(founder_id: 6, title: "Native", description: "Footwear for the future done in the style of everything we've ever loved about shoe design. You can slip
                  them on for a quick stroll, throw them into your backpack for a day at the beach or keep them on hand for apres. Our aesthetic is relaxed, flexible and active.
@@ -71,9 +71,9 @@ ActiveRecord::Base.transaction do
   Project.create(founder_id: 7, title: "Shanes", description: "Our mission is to bring baseball cleats to the masses that are functional and look great.",
                  funding_goal: 20000, duration: 20, category: "baseball", founder_name: "John Doe", project_photo: seed_image("baseball_project.jpg"))
   Project.create(founder_id: 8, title: "Kicksters", description: "I searched for the right material to develop stylish, yet functional,
-                 basketball shoes. Our shoes are breathable and comfortable.", funding_goal: 20000, duration: 20, category: "basektball",
-                 founder_name: "Dameon", project_photo: seed_image("basketball_project.jpg"))
+                 basketball shoes. Our shoes are breathable and comfortable.", funding_goal: 20000, duration: 18, category: "basektball",
+                 founder_name: "Dameon", project_photo: seed_image("basketball_project.jpg"), amount_raised: 1000)
   Project.create(founder_id: 9, title: "Lasco", description: "We wanted to develop product that is made entirely in the USA. We have carefully taken the time to insure that
                  every piece that goes into our footwear is 100% USA Made.", funding_goal: 20000, duration: 20, category: "fashion",
-                 founder_name: "Gabriel", project_photo: seed_image("lasco_project.jpg"))
+                 founder_name: "Gabriel", project_photo: seed_image("lasco_project.jpg"), amount_raised: 5000)
 end
