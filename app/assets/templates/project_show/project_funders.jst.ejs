@@ -7,8 +7,8 @@
         </div>
         <div class="col-md-10">
           <p class="backer-name">
-            <%= backer.escape("name")%>
-            <span class="commenttime grey-dark"><%=new Date()%></span>
+            <%= backer.escape("name") %>
+            <span class="commenttime grey-dark"><%= moment(backer.escape("created_at")).format('lll') %></span>
           </p>
           <p>Backed <%= backer.backedProjects.length %> projects!</p>
         </div>
