@@ -278,7 +278,7 @@ div.photo {
 }
 .project-show.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
   border: none;
-  background-color: none;
+  background: none;
   border-bottom-color: none;
 }
 .days-left-span {
@@ -363,4 +363,7 @@ h3.edit-profile-header {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
+}
+.backers-list {
+  list-style: none;
 }

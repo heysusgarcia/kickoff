@@ -2,7 +2,7 @@ ShoeApp.Views.ProjectShow = Backbone.View.extend({
   template: JST['project_show/project_show'],
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
   },
 
   className: 'project-show-info',

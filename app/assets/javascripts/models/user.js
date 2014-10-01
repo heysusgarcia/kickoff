@@ -23,10 +23,14 @@ ShoeApp.Models.User = Backbone.Model.extend({
     if (response.started_projects) {
       this.startedProjects().set(response.started_projects, { parse: true });
       delete response.started_projects;
-    } else if (response.followed_projects) {
+    }
+
+    if (response.followed_projects) {
       this.followedProjects().set(response.followed_projects, { parse: true });
       delete response.followed_projects;
-    } else if (response.backed_projects) {
+    }
+
+    if (response.backed_projects) {
       this.backedProjects().set(response.backed_projects, { parse: true });
       delete response.backed_projects;
     }

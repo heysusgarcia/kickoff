@@ -7,6 +7,7 @@
 #  body       :text             not null
 #  created_at :datetime
 #  updated_at :datetime
+#  author_id  :integer          not null
 #
 
 require 'test_helper'

@@ -43,6 +43,7 @@ module Api
 
     def update
       @project = Project.find(params[:id])
+      @project.amount_raised = params[:amount_raised] if !params.permit(:amount_raised).empty?
       if @project.update_attributes(project_params)
         render json: @project
       else

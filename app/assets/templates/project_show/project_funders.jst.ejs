@@ -1,11 +1,9 @@
-<ul>
+<ul class="backers-list">
   <% backers.each(function(backer) { %>
     <li>
       <div class="row">
         <div class="col-md-2">
-          <a href="#/profile/backer_id">
-            <img class="profile-photo" src="<%= backer.escape('profile_photo_url')%>">
-          </a>
+            <img class="profile-photo" src="<%= backer.escape('profile')%>">
         </div>
         <div class="col-md-10">
           <p class="backer-name">
