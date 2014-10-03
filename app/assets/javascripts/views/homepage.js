@@ -47,7 +47,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
 
   showBasketballPick: function() {
     var basketballProject = this.collection.get(3);
-    var basketballPickView = new ShoeApp.Views.StaffPickCasual({
+    var basketballPickView = new ShoeApp.Views.StaffPickBasketball({
       model: basketballProject
     });
     this._swapContent(basketballPickView);
@@ -55,7 +55,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
 
   showSkateboardingPick: function() {
     var skateboardingProject = this.collection.get(4);
-    var skateboardingPickView = new ShoeApp.Views.StaffPickCasual({
+    var skateboardingPickView = new ShoeApp.Views.StaffPickSkateboarding({
       model: skateboardingProject
     });
     this._swapContent(skateboardingPickView);
@@ -63,7 +63,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
 
   showBaseballPick: function() {
     var baseballProject = this.collection.get(5);
-    var baseballPickView = new ShoeApp.Views.StaffPickCasual({
+    var baseballPickView = new ShoeApp.Views.StaffPickBaseball({
       model: baseballProject
     });
     this._swapContent(baseballPickView);
@@ -71,7 +71,7 @@ ShoeApp.Views.Homepage = Backbone.View.extend({
 
   showFootballPick: function() {
     var footballProject = this.collection.get(6);
-    var footballPickView = new ShoeApp.Views.StaffPickCasual({
+    var footballPickView = new ShoeApp.Views.StaffPickFootball({
       model: footballProject
     });
     this._swapContent(footballPickView);

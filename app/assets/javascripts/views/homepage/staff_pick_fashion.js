@@ -1,7 +1,7 @@
 ShoeApp.Views.StaffPickFashion = Backbone.View.extend({
   template: JST['homepage/fashion'],
 
-  className: 'tab-pane fade active in',
+  className: 'tab-pane fade',
   id: 'fashion-design',
 
   render: function() {
